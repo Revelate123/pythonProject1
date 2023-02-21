@@ -1,0 +1,37 @@
+Masonry,True
+Top_restraint,False
+H,1400
+D,300
+Ltoe,450
+Lheel,600
+Internal_friction,24
+c,5
+Soil_density,18
+Allowable_bearing,100
+Kp,2.9
+Ka,0.4
+Surcharge,5
+Additional_moment,0
+Additional_load,0
+Restraint_height,3100
+Kp_over,False
+Ka_over,False
+tw,190
+SD,300
+SW,300
+SKD,250
+beta,0.0
+Overburden,0
+fc,25.0
+DC,25
+wall_cover,50
+footing_cover,50
+crack,Unrestrained
+fuc,15
+BT,10
+Masonry_size,20 series
+Masonry_type,Clay
+d,120
+job_name,Retaining Walls
+print_location,C:\Users\tduffett\PycharmProjects\pythonProject1
+Browse,

@@ -1,0 +1,25 @@
+RW6
+Dimensions:
+Retained height, H: 2200 mm
+Footing Depth, D: 300 mm
+Length of toe, Ltoe: 290 mm  Note: Ltoe spans underneath the wall
+Length of heel, Lheel: 1410 mm
+Wall Thickness, tw: 290 mm
+Shear key Depth: 600 mm
+Shear key Width: 300 mm
+Shear key Distance from Toe: 0 mm  Note: Distance spans to the beggining of the shear key
+Soil Properties:
+Angle of internal friction, : 26.0 Degrees
+Soil cohesion, c: 5.0 KPa
+Density of soil, :18.0 KN/m3
+Allowable bearing capacity: 200.0 KPa
+Passive soil coefficient, Kp: 2.9
+Active soil coefficient, Ka: 0.6
+Angle of Backfill soil: 0.0 Degrees
+Overburden Soil: 0 mm  Note: Overburden soil acts over the toe not including the area under the wall
+Loads:
+Surcharge: 5.0 KPa
+Additional moment: 0.0 KNm  Note: Moment acts in same direction as retained soil
+Additional load ontop of wall: 0 KN
+
+Results:

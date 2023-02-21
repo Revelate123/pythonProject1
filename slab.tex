@@ -1,0 +1,789 @@
+\documentclass{article}%
+\usepackage[T1]{fontenc}%
+\usepackage[utf8]{inputenc}%
+\usepackage{lmodern}%
+\usepackage{textcomp}%
+\usepackage{lastpage}%
+\usepackage{geometry}%
+\geometry{tmargin=1cm,lmargin=1cm}%
+%
+%
+%
+\begin{document}%
+\normalsize%
+\section*{Design of slab}%
+\label{sec:Designofslab}%
+\subsection*{Trial depth:}%
+\label{subsec:Trialdepth}%
+
+%
+As a starting point the depth of the slab will be set as 109 mm.%
+\subsection*{General AS3600:2018 Cl 9.4.1}%
+\label{subsec:GeneralAS36002018Cl9.4.1}%
+
+%
+The deflection of a slab shall be determined in accordance with Clause 9.4.2 or Clause 9.4.3.\newline%
+\newline%
+Alternatively, for reinforced slabs, the effective span{-}to{-}depth ratio of the slab shall conform with Clause 9.4.4.\newline%
+\newline%
+For a slab containing steel fibers in addition to conventional reinforcement or tendons, the deflection shall be determined in accordace with Clause 16.4.7.3.\newline%
+%
+\newline%
+ Live load is greater than dead load, therefore Clause 9.4.4 deemed to comply deflection check is not applicable, use Clause 9.4.3.%
+\subsection*{Slab deflection by simplified calculation  AS3600:2018 Cl 9.4.3}%
+\label{subsec:SlabdeflectionbysimplifiedcalculationAS36002018Cl9.4.3}%
+
+%
+The deflection of a slab subject to uniformly distributed loads shall be calcualted in accordance with Clause 8.5.3 on the basis of an equivalent beam taken as follows:\newline%
+\newline%
+(a)	For a one{-}way slab, a prismatic beam of unit width.\newline%
+\newline%
+(b)	For a rectangular slab supported on four sides, a prismatic beam of unit width through the centre of the slab, spanning in the short direction %
+$L_{x}$, with the same conditions of continuity as the slab in that direction and with the load distributedso that the proportion of load carried by the beam is given by:%
+\newline%
+\newline%
+%
+$\hspace*{10mm} L_{y}^{4} / (\alpha L_{x}^{4} + L_{y}^{4})$%
+\newline%
+\newline%
+where %
+ $\alpha$ is given in Table 9.4.3 for the appropriate slab-edge condition.%
+\newline%
+\newline%
+(c)	 For a two{-}way flat slab having multiple spans (for deflections on the column lines or midway between the supports), the column strips of the idealised frame described in Clause 6.9.%
+\subsection*{Table 9.4.3}%
+\label{subsec:Table9.4.3}%
+\begin{tabular}{l l | l }%
+\hline%
+&Edge condition&Coefficient ($\alpha$)\\%
+\hline%
+1&Four edges continuous&1\\%
+2&One short edge discontinuous&0.5\\%
+3&One long edge discontinuous&2\\%
+4&Two short edges discontinuous&0.2\\%
+5&Two long edges discontinuous&5\\%
+6&Two adjacent edges discontinuous&1\\%
+7&Three edges discontinuous (one long edge continuous)&0.4\\%
+8&Three edges discontinuous (one short edge continuous)&2.5\\%
+9&Four edges discontinuous&1\\%
+\cline{1%
+-%
+3}%
+\end{tabular}
+
+%
+\subsection*{Calculations}%
+\label{subsec:Calculations}%
+
+%
+Lx = 4000mm\newline%
+\newline%
+Ly = 4300mm%
+\newline%
+\newline%
+G = 2.9 KPa\newline%
+Q = 1.5 KPa\newline%
+\newline%
+%
+$(1.0 + k_{cs})G + (\psi_{s} + k_{cs}\psi_{l})Q = $5.73 KN/m%
+\newline%
+\newline%
+%
+For case 1%
+\newline%
+\newline%
+%
+$\alpha = 1.0%
+\newline%
+\newline%
+%
+L_{y}^{4} / (\alpha L_{x}^{4} + L_{y}^{4}) = $0.57%
+\newline%
+\newline%
+ Load on unit width beam = 2.26KN/m%
+\newline%
+\newline%
+%
+For case 2%
+\newline%
+\newline%
+%
+$\alpha = 0.5%
+\newline%
+\newline%
+%
+L_{y}^{4} / (\alpha L_{x}^{4} + L_{y}^{4}) = $0.73%
+\newline%
+\newline%
+ Load on unit width beam = 2.87KN/m%
+\newline%
+\newline%
+%
+For case 3%
+\newline%
+\newline%
+%
+$\alpha = 2.0%
+\newline%
+\newline%
+%
+L_{y}^{4} / (\alpha L_{x}^{4} + L_{y}^{4}) = $0.4%
+\newline%
+\newline%
+ Load on unit width beam = 1.58KN/m%
+\newline%
+\newline%
+%
+For case 6%
+\newline%
+\newline%
+%
+$\alpha = 1.0%
+\newline%
+\newline%
+%
+L_{y}^{4} / (\alpha L_{x}^{4} + L_{y}^{4}) = $0.57%
+\newline%
+\newline%
+ Load on unit width beam = 2.26KN/m%
+\subsection*{Beam deflection by simplified calculation AS3600:2018 Cl 8.5.3}%
+\label{subsec:BeamdeflectionbysimplifiedcalculationAS36002018Cl8.5.3}%
+
+%
+\subsection*{Short{-}term deflection AS3600:2018 Cl 8.5.3.1}%
+\label{subsec:Short{-}termdeflectionAS36002018Cl8.5.3.1}%
+
+%
+The short{-}term deflection due to external loads and prestressing, which occur immediately on their application, shall be calculated using the value of %
+$E_{cj}$ determined in accordance with Clause 3.1.2 and the value of the effective second moment of area of the member ($I_{ef}$).%
+ This value of $I_{ef}$ shall be determined by rational calculation. Alternatively, $I_{ef}$ may be determined at the nominated cross-sections as follows:%
+\newline%
+\newline%
+(a) For a simply suppported span, the value at midspan.\newline%
+\newline%
+(b)	In a continuous beam:\newline%
+\newline%
+		(i)	for an interior span, half the midspanvalue plus one quarter of each support value; or\newline%
+\newline%
+	(ii)	for an end span, half the midspan value plus half the value at the continuous support.%
+\newline%
+\newline%
+(c)	For a cantilever, the value at the support.\newline%
+\newline%
+For the purposes of the above determinations, the value of %
+$I_{ef}$ at each of the cross-sections nominated in Items (a) to (c) above is given by:%
+\newline%
+\newline%
+%
+$I_{ef} = \frac{I_{cr}}{1-\left(1-\frac{I_{cr}}{I}\right)\left(\frac{M_{cr.t}}{M_{s}^{*}}\right)^{2}} \leq I_{ef.max}%
+\newline%
+\newline%
+where%
+\newline%
+\newline%
+%
+$I_{ef.max}$ = maximum effective second moment of area and is taken as $I$, for reinforced sections when\hspace{30mm} $p = A_{st}/bd \geq 0.005$ for prestressed sections%
+\newline%
+\newline%
+%
+$\hspace*{11mm} = $ 0.6$I$, for reinforced sections when $p = A_{st}/bd < 0.005$%
+\newline%
+\newline%
+%
+$\hspace*{15mm}b \hspace{5mm}= \hspace{5m}$width of the cross-section at the compression face%
+\newline%
+\newline%
+%
+$M_{s}^{*} = $ maximum bending moment at the section, based on the short-term serviceability load or the construction load%
+\newline%
+\newline%
+%
+$M_{cr.t} = Z(f'_{ct.f} - \sigma_{cs} + P / A_{g}) + Pe \geq 0$%
+\newline%
+\newline%
+%
+$\hspace*{15mm}Z = $ section modulus of the uncracked section, referred to the extreme fibre at which cracking occurs%
+\newline%
+\newline%
+%
+$\hspace*{15mm}f'_{ct.f} = $ characteristic flexural tensile strength of concrete%
+\newline%
+\newline%
+%
+$\hspace*{15mm}\sigma_{cs} = $ maximum shrinkage-induced tensile stress on the uncracked section at the extreme fibre at which cracking occurs. In the absence of more refined calculation, the value of $\sigma_{cs}$ that accounts for the restraint provided by the steel reinforcement may be taken as:%
+\newline%
+\newline%
+%
+$\hspace*{15mm} = \frac{2.5p_{w} - 0.8p_{cw}}{1 + 50P_{w}}E_{s}\varepsilon_{cs}%
+\newline%
+\newline%
+%
+\subsection*{Long{-}term deflection AS3600:2018  Cl 8.5.3.2}%
+\label{subsec:Long{-}termdeflectionAS36002018Cl8.5.3.2}%
+
+%
+For reinforced and prestressed beams, that part of the deflection that occurs after the short term deflection shall be calcualted as the sum of:%
+\newline%
+\newline%
+%
+(a)$\hspace{10mm}$the shrinkage component of the long term deflection, determined from the design shrinkage strain of concrete ($\varepsilon_{cs}$) (see Clause 3.1.7) and the principles of mechanics; and%
+\newline%
+\newline%
+%
+(b)$\hspace{10mm}$the additional long-term creep deflections, determined from the design creep coefficient of concrete($\varphi_{cc}$) (see Clause 3.1.8) and the principles of mechanics.%
+\newline%
+\newline%
+%
+In the absence of more accurate calculations, the additional long-term deflection of a reinforced beam due to creep and shrinkage may be estimated by multiplying the short term-term deflection caused by the sustained loads (obtained using the final long-term shrinkage strain in the estimate of $M_{cr.t}$) by a multiplier, $K_{cs}$, given by:%
+\newline%
+\newline%
+%
+$k_{cs} = [2 - 1.2(A_{sc} / A_{st})] \geq 0.8$%
+\newline%
+\newline%
+%
+where $A_{sc}$ is the area of steel in the compressive zone of the cracked section between the neutral axis at service loads and the extreme concrete compressive fiber and $A_{sc}/A_{st}$ is taken at midspan, for a simply supported or continuous beam and at the support, for a cantilever beam.%
+Long term deflection:%
+\newline%
+\newline%
+%
+$\Delta_{total} = \Delta_{s} + k_{cs}\Delta_{s.sus}%
+\newline%
+\newline%
+%
+where%
+\newline%
+\newline%
+%
+$\Delta{s} = \frac{L_{ox}^{2}}{96E_{c}I_{ef.av}}(M_{L.s} + 10M_{M.s} + M_{R.s})%
+\newline%
+\newline%
+%
+$\Delta_{s.sus} = \frac{w_{long}}{w_{short}}\Delta_{s}%
+\subsection*{Calculations}%
+\label{subsec:Calculations}%
+
+%
+Cases to check: {[}1, 2, 3, 6{]}%
+\newline%
+\newline%
+Try SL92 mesh top and bottom\newline%
+\newline%
+%
+Assume reinforcement is uniform across slab.\newline%
+\newline%
+%
+\newline%
+\newline%
+The value of dn is9.397780602380685\newline%
+\newline%
+%
+\begin{tabular}{llll}%
+\textbf{Slab Properties}&&&\\%
+\hline%
+Concrete cover&=&30& mm\\%
+&&&\\%
+Total slab depth&=&109.32844546471193& mm\\%
+&&&\\%
+Equivalent area of steel $A_{st}$&=&358& $mm^{2}$\\%
+&&&\\%
+Breadth, b &=&1000& mm\\%
+&&&\\%
+Depth to centroid of tension reinforcement, d&=&42& mm\\%
+&&&\\%
+Depth to the neutral axis, c&=&9& mm\\%
+&&&\\%
+Cracked second moment of area, $I_{cr}$&=&3185369& $mm^{4}\\%
+&&&\\%
+Gross second moment of area, $I_{g}$&=&108897591& $mm^{4}\\%
+&&&\\%
+Concrete flexural strength, $f'_{ct.f}&=&3.0& MPa\\%
+&&&\\%
+Concrete modulus of elasticity, $E_{c}$&=&26700.0& MPa\\%
+&&&\\%
+Steel modulus of elasticity, $E_{s}$&=&200000& MPa\\%
+\end{tabular}%
+\subsection*{For case 1}%
+\label{subsec:Forcase1}%
+
+%
+\newline%
+\newline%
+%
+\textbf{At the left support:}%
+\newline%
+\newline%
+%
+$M_{ct.t}$ = 1 KNm%
+\newline%
+%
+$M_{s,L}^{*}$ = 4 KNm%
+\newline%
+%
+$I_{ef,L}$ = 3387211 $mm^{4}$%
+\newline%
+\newline%
+%
+\textbf{At the midpoint support:}%
+\newline%
+\newline%
+%
+$M_{ct.t}$ = 1 KNm%
+\newline%
+%
+$M_{s,M}^{*}$ = 1 KNm%
+\newline%
+%
+$I_{ef,M}$ = 68405103 $mm^{4}$%
+\newline%
+\newline%
+%
+\textbf{At the right support:}%
+\newline%
+\newline%
+%
+$M_{ct.t}$ = 1 KNm%
+\newline%
+%
+$M_{s,R}^{*}$ = 4 KNm%
+\newline%
+%
+$I_{ef,R}$ = 3387211 $mm^{4}$%
+\newline%
+\newline%
+%
+Span Lx is continuous, therefore $I_{ef}$ = half the midspan value plus one quarter of each support%
+\newline%
+\newline%
+%
+$I_{ef} = 0.5I_{ef,M} + 0.25I_{ef,L} + 0.25I_{ef,R} = $35896157 $ mm^{4}$%
+\newline%
+\newline%
+%
+$\Delta_{s} =$0.314 mm%
+\newline%
+\newline%
+%
+$w_{long} = G + \psi_{l}Q = $4 KN/m%
+\newline%
+%
+$w_{short} = G + \psi_{s}Q = $ 4 KN/m%
+\newline%
+\newline%
+%
+$\Delta_{s.sus}$ = 0.16 mm%
+\newline%
+\newline%
+%
+$\Delta_{total}$ = 0.63 mm%
+\subsection*{For case 2}%
+\label{subsec:Forcase2}%
+
+%
+\newline%
+\newline%
+%
+\textbf{At the left support:}%
+\newline%
+\newline%
+%
+$M_{ct.t}$ = 1 KNm%
+\newline%
+%
+$M_{s,L}^{*}$ = 5 KNm%
+\newline%
+%
+$I_{ef,L}$ = 3307089 $mm^{4}$%
+\newline%
+\newline%
+%
+\textbf{At the midpoint support:}%
+\newline%
+\newline%
+%
+$M_{ct.t}$ = 1 KNm%
+\newline%
+%
+$M_{s,M}^{*}$ = 1 KNm%
+\newline%
+%
+$I_{ef,M}$ = 7748273 $mm^{4}$%
+\newline%
+\newline%
+%
+\textbf{At the right support:}%
+\newline%
+\newline%
+%
+$M_{ct.t}$ = 1 KNm%
+\newline%
+%
+$M_{s,R}^{*}$ = 5 KNm%
+\newline%
+%
+$I_{ef,R}$ = 3307089 $mm^{4}$%
+\newline%
+\newline%
+%
+Span Lx is continuous, therefore $I_{ef}$ = half the midspan value plus one quarter of each support%
+\newline%
+\newline%
+%
+$I_{ef} = 0.5I_{ef,M} + 0.25I_{ef,L} + 0.25I_{ef,R} = $5527681 $ mm^{4}$%
+\newline%
+\newline%
+%
+$\Delta_{s} =$2.596 mm%
+\newline%
+\newline%
+%
+$w_{long} = G + \psi_{l}Q = $4 KN/m%
+\newline%
+%
+$w_{short} = G + \psi_{s}Q = $ 4 KN/m%
+\newline%
+\newline%
+%
+$\Delta_{s.sus}$ = 1.67 mm%
+\newline%
+\newline%
+%
+$\Delta_{total}$ = 5.94 mm%
+\subsection*{For case 3}%
+\label{subsec:Forcase3}%
+
+%
+\newline%
+\newline%
+%
+\textbf{At the left support:}%
+\newline%
+\newline%
+%
+$M_{ct.t}$ = 1 KNm%
+\newline%
+%
+$M_{s,L}^{*}$ = 3 KNm%
+\newline%
+%
+$I_{ef,L}$ = 3626102 $mm^{4}$%
+\newline%
+\newline%
+%
+\textbf{At the midpoint support:}%
+\newline%
+\newline%
+%
+$M_{ct.t}$ = 1 KNm%
+\newline%
+%
+$M_{s,M}^{*}$ = 2 KNm%
+\newline%
+%
+$I_{ef,M}$ = 4848707 $mm^{4}$%
+\newline%
+\newline%
+%
+\textbf{At the right support:}%
+\newline%
+\newline%
+%
+$M_{ct.t}$ = 1 KNm%
+\newline%
+%
+$M_{s,R}^{*}$ = 1 KNm%
+\newline%
+%
+$I_{ef,R}$ = 108897591 $mm^{4}$%
+\newline%
+\newline%
+%
+Span Lx is an edge span, therefore $I_{ef}$ = half the midspan value plus half the value at the continuous support.%
+\newline%
+\newline%
+%
+$I_{ef} = 0.5I_{ef,M} + 0.5I_{ef,L} = $4237405 $ mm^{4}$%
+\newline%
+\newline%
+%
+$\Delta_{s} =$17.296 mm%
+\newline%
+\newline%
+%
+$w_{long} = G + \psi_{l}Q = $4 KN/m%
+\newline%
+%
+$w_{short} = G + \psi_{s}Q = $ 4 KN/m%
+\newline%
+\newline%
+%
+$\Delta_{s.sus}$ = 6.14 mm%
+\newline%
+\newline%
+%
+$\Delta_{total}$ = 29.57 mm%
+\subsection*{For case 6}%
+\label{subsec:Forcase6}%
+
+%
+\newline%
+\newline%
+%
+\textbf{At the left support:}%
+\newline%
+\newline%
+%
+$M_{ct.t}$ = 1 KNm%
+\newline%
+%
+$M_{s,L}^{*}$ = 4 KNm%
+\newline%
+%
+$I_{ef,L}$ = 3387211 $mm^{4}$%
+\newline%
+\newline%
+%
+\textbf{At the midpoint support:}%
+\newline%
+\newline%
+%
+$M_{ct.t}$ = 1 KNm%
+\newline%
+%
+$M_{s,M}^{*}$ = 2 KNm%
+\newline%
+%
+$I_{ef,M}$ = 3829423 $mm^{4}$%
+\newline%
+\newline%
+%
+\textbf{At the right support:}%
+\newline%
+\newline%
+%
+$M_{ct.t}$ = 1 KNm%
+\newline%
+%
+$M_{s,R}^{*}$ = 1 KNm%
+\newline%
+%
+$I_{ef,R}$ = 8171753 $mm^{4}$%
+\newline%
+\newline%
+%
+Span Lx is an edge span, therefore $I_{ef}$ = half the midspan value plus half the value at the continuous support.%
+\newline%
+\newline%
+%
+$I_{ef} = 0.5I_{ef,M} + 0.5I_{ef,L} = $3608317 $ mm^{4}$%
+\newline%
+\newline%
+%
+$\Delta_{s} =$29.008 mm%
+\newline%
+\newline%
+%
+$w_{long} = G + \psi_{l}Q = $4 KN/m%
+\newline%
+%
+$w_{short} = G + \psi_{s}Q = $ 4 KN/m%
+\newline%
+\newline%
+%
+$\Delta_{s.sus}$ = 14.7 mm%
+\newline%
+\newline%
+%
+$\Delta_{total}$ = 58.4 mm%
+\newline%
+\newline%
+%
+\begin{tabular}{llll}%
+Summary of deflections&&&\\%
+\hline%
+1&0.63& mm&OK\\%
+2&5.94& mm&OK\\%
+3&29.57& mm&NG\\%
+6&58.4& mm&NG\\%
+\end{tabular}%
+\section*{Strength of Slabs in Bending AS3600:2018 Cl 9.1}%
+\label{sec:StrengthofSlabsinBendingAS36002018Cl9.1}%
+\subsection*{General AS3600:2018 Cl 9.1.1}%
+\label{subsec:GeneralAS36002018Cl9.1.1}%
+
+%
+The strength of a slab in bending shall be determined in accordance with Clauses 8.1.1 to 8.1.8, except that for a two{-}way reinforced slabs, the minimum strength requirements of Clause 8.1.6.1 shall be determined to be satisfied by providing tensile reinforcement such that %
+$A_{st}/bd$ is not less than the following in each direction:%
+\newline%
+\newline%
+%
+\begin{tabular}{lll}%
+(a)&Slabs supported by columns at their corners&$\hspace*{10mm}0.24(D/d)^{2}f'_{ct.f}/f_{sy}$\\%
+&&\\%
+(b)&Slabs supported by beams or walls on four sides&$\hspace*{10mm}0.19(D/d)^{2}f'_{ct.f}/f_{sy}$\\%
+\end{tabular}%
+\newline%
+\newline%
+%
+\subsection*{Strength of Beams in Bending AS3600:2018 Cl 8.1}%
+\label{subsec:StrengthofBeamsinBendingAS36002018Cl8.1}%
+
+%
+\subsection*{Basis of strength calculations AS3600:2018 Cl 8.1.2}%
+\label{subsec:BasisofstrengthcalculationsAS36002018Cl8.1.2}%
+
+%
+\subsection*{Rectangular stress block AS3600:2018 Cl 8.1.3}%
+\label{subsec:RectangularstressblockAS36002018Cl8.1.3}%
+
+%
+\subsection*{Calculations}%
+\label{subsec:Calculations}%
+
+%
+Determine bending capacity of section ($\phi M_{n}$):%
+\newline%
+\newline%
+%
+$\phi M_{n} = $4.5 KNm%
+\newline%
+\newline%
+Determine bending moment demands:\newline%
+\newline%
+As reo is symmetrical top and bottom, %
+$\phi M_{n}$ applies to positive and negative bending
+
+%
+\newline%
+\newline%
+%
+$M_{x}^{*} = \beta_{x} F_{d} L_{x}^{2}$%
+\newline%
+\newline%
+%
+$M_{y}^{*} = \beta_{y} F_{d} L_{x}^{2}$%
+\newline%
+\newline%
+where %
+$F_{d}$ is the uniformly distributed design load per unit area factored for strength, and $\beta_{x}$ and $\beta_{y}$ are given in:%
+\newline%
+\newline%
+%
+\begin{tabular}{ll}%
+(i)&Table 6.10.3.2(A) for slabs with Ductility Class N reinforcement as the main flexural reinforcement\\%
+&\\%
+(ii)&Table 6.10.3.2(B) for slabs with Ductility Class N reinforcement or Ductility Class L mesh as the main\\%
+& flexural reinforcement, no moment redistribution can be accommodated at either the servicibility or strength limit states\\%
+\end{tabular}%
+\newline%
+\newline%
+%
+The moments, so calcualted, shall apply over a central region of the slab equal to three quarters of $L_{x}$ and $L_{y}$ respectively. Outside of this region, the minimum requirement for strength shall be deemed to conform with the minimum strength requirement of Clause 9.1.1.%
+\newline%
+\newline%
+%
+(b)$\hspace{10mm}$The negative bending moments at a continuous edge shall be taken as:%
+\newline%
+\newline%
+%
+\begin{tabular}{lll}%
+&(i)&1.33 times the midspan values in the direction considered, when they are taken from Table 6.10.3.2(A)\\%
+&&\\%
+&(ii)&$\alpha_{x}$ or $\alpha_{y}$ times the midspan values in the direction considered when they are taken from Table 6.10.3.2(B)\\%
+\end{tabular}%
+\newline%
+\newline%
+%
+\subsection{Table 6.10.3.2(B)}%
+\label{subsec:Table6.10.3.2(B)}%
+
+%
+\subsection{Bending moment coefficients for rectangular slabs supported on four sides (ductility class N or ductility class L reinforcement)}%
+\label{subsec:Bendingmomentcoefficientsforrectangularslabssupportedonfoursides(ductilityclassNorductilityclassLreinforcement)}%
+
+%
+\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|l|l}%
+\multicolumn{3}{|c|}{Edge condition}&\multicolumn{9}{|c|}{Short span coefficients (\$\textbackslash{}beta\_\{x\}\$ and \$\textbackslash{}alpha\_\{x\}\$}&Long span coefficients ($eta_{y}$ and $lpha_{y}$) for all values of $L_{y}/L_{x}$\\%
+\end{tabular}%
+\subsection{Calculations}%
+\label{subsec:Calculations}%
+
+%
+\textbf{For case 1.\newline%
+\newline%
+}%
+$M_{x}^{*}$ = 0.7 KNm%
+\newline%
+\newline%
+%
+$M_{y}^{*}$ = 1.8 KNm%
+\newline%
+\newline%
+%
+$M_{x,negative}^{*}$ = 1.5 KNm%
+\newline%
+\newline%
+%
+$M_{y,negative}^{*}$ = 4.9 KNm%
+\newline%
+\newline%
+%
+\textbf{For case 2.\newline%
+\newline%
+}%
+$M_{x}^{*}$ = 2.7 KNm%
+\newline%
+\newline%
+%
+$M_{y}^{*}$ = 2.2 KNm%
+\newline%
+\newline%
+%
+$M_{x,negative}^{*}$ = 5.8 KNm%
+\newline%
+\newline%
+%
+$M_{y,negative}^{*}$ = 5.0 KNm%
+\newline%
+\newline%
+%
+\textbf{For case 3.\newline%
+\newline%
+}%
+$M_{x}^{*}$ = 2.5 KNm%
+\newline%
+\newline%
+%
+$M_{y}^{*}$ = 2.6 KNm%
+\newline%
+\newline%
+%
+$M_{x,negative}^{*}$ = 5.4 KNm%
+\newline%
+\newline%
+%
+$M_{y,negative}^{*}$ = 6.3 KNm%
+\newline%
+\newline%
+%
+\textbf{For case 6.\newline%
+\newline%
+}%
+$M_{x}^{*}$ = 3.2 KNm%
+\newline%
+\newline%
+%
+$M_{y}^{*}$ = 3.1 KNm%
+\newline%
+\newline%
+%
+$M_{x,negative}^{*}$ = 6.6 KNm%
+\newline%
+\newline%
+%
+$M_{y,negative}^{*}$ = 6.6 KNm%
+\newline%
+\newline%
+
+%
+\end{document}

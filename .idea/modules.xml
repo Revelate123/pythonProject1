@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../Concrete/.idea/Concrete.iml" filepath="$PROJECT_DIR$/../Concrete/.idea/Concrete.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Deflection/.idea/Deflection.iml" filepath="$PROJECT_DIR$/../Deflection/.idea/Deflection.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Loadings/.idea/Loadings.iml" filepath="$PROJECT_DIR$/../Loadings/.idea/Loadings.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/pythonProject1.iml" filepath="$PROJECT_DIR$/.idea/pythonProject1.iml" />
+    </modules>
+  </component>
+</project>
