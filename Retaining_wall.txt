@@ -1,10 +1,10 @@
 Masonry,True
 Top_restraint,False
-H,1400
+H,900
 D,300
-Ltoe,450
-Lheel,600
-Internal_friction,24
+Ltoe,190
+Lheel,710
+Internal_friction,25
 c,5
 Soil_density,18
 Allowable_bearing,100
@@ -17,7 +17,7 @@ Restraint_height,3100
 Kp_over,False
 Ka_over,False
 tw,190
-SD,300
+SD,0
 SW,300
 SKD,250
 beta,0.0
