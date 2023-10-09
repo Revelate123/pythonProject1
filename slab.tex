@@ -17,7 +17,7 @@
 \label{subsec:Trialdepth}%
 
 %
-As a starting point the depth of the slab will be set as 109 mm.%
+As a starting point the depth of the slab will be set as 200 mm.%
 \subsection*{General AS3600:2018 Cl 9.4.1}%
 \label{subsec:GeneralAS36002018Cl9.4.1}%
 
@@ -76,16 +76,16 @@ where %
 \label{subsec:Calculations}%
 
 %
-Lx = 4000mm\newline%
+Lx = 2300mm\newline%
 \newline%
-Ly = 4300mm%
+Ly = 2300mm%
 \newline%
 \newline%
-G = 2.9 KPa\newline%
-Q = 1.5 KPa\newline%
+G = 16 KPa\newline%
+Q = 5 KPa\newline%
 \newline%
 %
-$(1.0 + k_{cs})G + (\psi_{s} + k_{cs}\psi_{l})Q = $5.73 KN/m%
+$(1.0 + k_{cs})G + (\psi_{s} + k_{cs}\psi_{l})Q = $26.7 KN/m%
 \newline%
 \newline%
 %
@@ -97,10 +97,10 @@ $\alpha = 1.0%
 \newline%
 \newline%
 %
-L_{y}^{4} / (\alpha L_{x}^{4} + L_{y}^{4}) = $0.57%
+L_{y}^{4} / (\alpha L_{x}^{4} + L_{y}^{4}) = $0.5%
 \newline%
 \newline%
- Load on unit width beam = 2.26KN/m%
+ Load on unit width beam = 9.75KN/m%
 \newline%
 \newline%
 %
@@ -112,10 +112,10 @@ $\alpha = 0.5%
 \newline%
 \newline%
 %
-L_{y}^{4} / (\alpha L_{x}^{4} + L_{y}^{4}) = $0.73%
+L_{y}^{4} / (\alpha L_{x}^{4} + L_{y}^{4}) = $0.67%
 \newline%
 \newline%
- Load on unit width beam = 2.87KN/m%
+ Load on unit width beam = 13.0KN/m%
 \newline%
 \newline%
 %
@@ -127,10 +127,40 @@ $\alpha = 2.0%
 \newline%
 \newline%
 %
-L_{y}^{4} / (\alpha L_{x}^{4} + L_{y}^{4}) = $0.4%
+L_{y}^{4} / (\alpha L_{x}^{4} + L_{y}^{4}) = $0.33%
 \newline%
 \newline%
- Load on unit width beam = 1.58KN/m%
+ Load on unit width beam = 6.5KN/m%
+\newline%
+\newline%
+%
+For case 4%
+\newline%
+\newline%
+%
+$\alpha = 0.2%
+\newline%
+\newline%
+%
+L_{y}^{4} / (\alpha L_{x}^{4} + L_{y}^{4}) = $0.83%
+\newline%
+\newline%
+ Load on unit width beam = 16.25KN/m%
+\newline%
+\newline%
+%
+For case 5%
+\newline%
+\newline%
+%
+$\alpha = 5.0%
+\newline%
+\newline%
+%
+L_{y}^{4} / (\alpha L_{x}^{4} + L_{y}^{4}) = $0.17%
+\newline%
+\newline%
+ Load on unit width beam = 3.25KN/m%
 \newline%
 \newline%
 %
@@ -142,10 +172,55 @@ $\alpha = 1.0%
 \newline%
 \newline%
 %
-L_{y}^{4} / (\alpha L_{x}^{4} + L_{y}^{4}) = $0.57%
+L_{y}^{4} / (\alpha L_{x}^{4} + L_{y}^{4}) = $0.5%
 \newline%
 \newline%
- Load on unit width beam = 2.26KN/m%
+ Load on unit width beam = 9.75KN/m%
+\newline%
+\newline%
+%
+For case 7%
+\newline%
+\newline%
+%
+$\alpha = 0.4%
+\newline%
+\newline%
+%
+L_{y}^{4} / (\alpha L_{x}^{4} + L_{y}^{4}) = $0.71%
+\newline%
+\newline%
+ Load on unit width beam = 13.93KN/m%
+\newline%
+\newline%
+%
+For case 8%
+\newline%
+\newline%
+%
+$\alpha = 2.5%
+\newline%
+\newline%
+%
+L_{y}^{4} / (\alpha L_{x}^{4} + L_{y}^{4}) = $0.29%
+\newline%
+\newline%
+ Load on unit width beam = 5.57KN/m%
+\newline%
+\newline%
+%
+For case 9%
+\newline%
+\newline%
+%
+$\alpha = 1.0%
+\newline%
+\newline%
+%
+L_{y}^{4} / (\alpha L_{x}^{4} + L_{y}^{4}) = $0.5%
+\newline%
+\newline%
+ Load on unit width beam = 9.75KN/m%
 \subsection*{Beam deflection by simplified calculation AS3600:2018 Cl 8.5.3}%
 \label{subsec:BeamdeflectionbysimplifiedcalculationAS36002018Cl8.5.3}%
 
@@ -264,7 +339,7 @@ $\Delta_{s.sus} = \frac{w_{long}}{w_{short}}\Delta_{s}%
 \label{subsec:Calculations}%
 
 %
-Cases to check: {[}1, 2, 3, 6{]}%
+Cases to check: {[}1, 2, 3, 4, 5, 6, 7, 8, 9{]}%
 \newline%
 \newline%
 Try SL92 mesh top and bottom\newline%
@@ -275,27 +350,27 @@ Assume reinforcement is uniform across slab.\newline%
 %
 \newline%
 \newline%
-The value of dn is9.397780602380685\newline%
+The value of dn is28.971917758417224\newline%
 \newline%
 %
 \begin{tabular}{llll}%
 \textbf{Slab Properties}&&&\\%
 \hline%
-Concrete cover&=&30& mm\\%
+Concrete cover&=&70& mm\\%
 &&&\\%
-Total slab depth&=&109.32844546471193& mm\\%
+Total slab depth&=&200& mm\\%
 &&&\\%
-Equivalent area of steel $A_{st}$&=&358& $mm^{2}$\\%
+Equivalent area of steel $A_{st}$&=&2000& $mm^{2}$\\%
 &&&\\%
 Breadth, b &=&1000& mm\\%
 &&&\\%
-Depth to centroid of tension reinforcement, d&=&42& mm\\%
+Depth to centroid of tension reinforcement, d&=&85& mm\\%
 &&&\\%
-Depth to the neutral axis, c&=&9& mm\\%
+Depth to the neutral axis, c&=&29& mm\\%
 &&&\\%
-Cracked second moment of area, $I_{cr}$&=&3185369& $mm^{4}\\%
+Cracked second moment of area, $I_{cr}$&=&55134477& $mm^{4}\\%
 &&&\\%
-Gross second moment of area, $I_{g}$&=&108897591& $mm^{4}\\%
+Gross second moment of area, $I_{g}$&=&666666667& $mm^{4}\\%
 &&&\\%
 Concrete flexural strength, $f'_{ct.f}&=&3.0& MPa\\%
 &&&\\%
@@ -314,13 +389,13 @@ Steel modulus of elasticity, $E_{s}$&=&200000& MPa\\%
 \newline%
 \newline%
 %
-$M_{ct.t}$ = 1 KNm%
+$M_{ct.t}$ = 4 KNm%
 \newline%
 %
-$M_{s,L}^{*}$ = 4 KNm%
+$M_{s,L}^{*}$ = 5 KNm%
 \newline%
 %
-$I_{ef,L}$ = 3387211 $mm^{4}$%
+$I_{ef,L}$ = 100036892 $mm^{4}$%
 \newline%
 \newline%
 %
@@ -328,13 +403,13 @@ $I_{ef,L}$ = 3387211 $mm^{4}$%
 \newline%
 \newline%
 %
-$M_{ct.t}$ = 1 KNm%
+$M_{ct.t}$ = 4 KNm%
 \newline%
 %
 $M_{s,M}^{*}$ = 1 KNm%
 \newline%
 %
-$I_{ef,M}$ = 68405103 $mm^{4}$%
+$I_{ef,M}$ = 666666667 $mm^{4}$%
 \newline%
 \newline%
 %
@@ -342,13 +417,13 @@ $I_{ef,M}$ = 68405103 $mm^{4}$%
 \newline%
 \newline%
 %
-$M_{ct.t}$ = 1 KNm%
+$M_{ct.t}$ = 4 KNm%
 \newline%
 %
-$M_{s,R}^{*}$ = 4 KNm%
+$M_{s,R}^{*}$ = 5 KNm%
 \newline%
 %
-$I_{ef,R}$ = 3387211 $mm^{4}$%
+$I_{ef,R}$ = 100036892 $mm^{4}$%
 \newline%
 \newline%
 %
@@ -356,26 +431,26 @@ Span Lx is continuous, therefore $I_{ef}$ = half the midspan value plus one quar
 \newline%
 \newline%
 %
-$I_{ef} = 0.5I_{ef,M} + 0.25I_{ef,L} + 0.25I_{ef,R} = $35896157 $ mm^{4}$%
+$I_{ef} = 0.5I_{ef,M} + 0.25I_{ef,L} + 0.25I_{ef,R} = $383351779 $ mm^{4}$%
 \newline%
 \newline%
 %
-$\Delta_{s} =$0.314 mm%
+$\Delta_{s} =$0.014 mm%
 \newline%
 \newline%
 %
-$w_{long} = G + \psi_{l}Q = $4 KN/m%
+$w_{long} = G + \psi_{l}Q = $18 KN/m%
 \newline%
 %
-$w_{short} = G + \psi_{s}Q = $ 4 KN/m%
-\newline%
-\newline%
-%
-$\Delta_{s.sus}$ = 0.16 mm%
+$w_{short} = G + \psi_{s}Q = $ 20 KN/m%
 \newline%
 \newline%
 %
-$\Delta_{total}$ = 0.63 mm%
+$\Delta_{s.sus}$ = 0.01 mm%
+\newline%
+\newline%
+%
+$\Delta_{total}$ = 0.03 mm%
 \subsection*{For case 2}%
 \label{subsec:Forcase2}%
 
@@ -387,13 +462,13 @@ $\Delta_{total}$ = 0.63 mm%
 \newline%
 \newline%
 %
-$M_{ct.t}$ = 1 KNm%
+$M_{ct.t}$ = 4 KNm%
 \newline%
 %
-$M_{s,L}^{*}$ = 5 KNm%
+$M_{s,L}^{*}$ = 7 KNm%
 \newline%
 %
-$I_{ef,L}$ = 3307089 $mm^{4}$%
+$I_{ef,L}$ = 73756814 $mm^{4}$%
 \newline%
 \newline%
 %
@@ -401,13 +476,13 @@ $I_{ef,L}$ = 3307089 $mm^{4}$%
 \newline%
 \newline%
 %
-$M_{ct.t}$ = 1 KNm%
+$M_{ct.t}$ = 4 KNm%
 \newline%
 %
-$M_{s,M}^{*}$ = 1 KNm%
+$M_{s,M}^{*}$ = 2 KNm%
 \newline%
 %
-$I_{ef,M}$ = 7748273 $mm^{4}$%
+$I_{ef,M}$ = 666666667 $mm^{4}$%
 \newline%
 \newline%
 %
@@ -415,13 +490,13 @@ $I_{ef,M}$ = 7748273 $mm^{4}$%
 \newline%
 \newline%
 %
-$M_{ct.t}$ = 1 KNm%
+$M_{ct.t}$ = 4 KNm%
 \newline%
 %
-$M_{s,R}^{*}$ = 5 KNm%
+$M_{s,R}^{*}$ = 7 KNm%
 \newline%
 %
-$I_{ef,R}$ = 3307089 $mm^{4}$%
+$I_{ef,R}$ = 73756814 $mm^{4}$%
 \newline%
 \newline%
 %
@@ -429,26 +504,26 @@ Span Lx is continuous, therefore $I_{ef}$ = half the midspan value plus one quar
 \newline%
 \newline%
 %
-$I_{ef} = 0.5I_{ef,M} + 0.25I_{ef,L} + 0.25I_{ef,R} = $5527681 $ mm^{4}$%
+$I_{ef} = 0.5I_{ef,M} + 0.25I_{ef,L} + 0.25I_{ef,R} = $370211740 $ mm^{4}$%
 \newline%
 \newline%
 %
-$\Delta_{s} =$2.596 mm%
+$\Delta_{s} =$0.019 mm%
 \newline%
 \newline%
 %
-$w_{long} = G + \psi_{l}Q = $4 KN/m%
+$w_{long} = G + \psi_{l}Q = $18 KN/m%
 \newline%
 %
-$w_{short} = G + \psi_{s}Q = $ 4 KN/m%
-\newline%
-\newline%
-%
-$\Delta_{s.sus}$ = 1.67 mm%
+$w_{short} = G + \psi_{s}Q = $ 20 KN/m%
 \newline%
 \newline%
 %
-$\Delta_{total}$ = 5.94 mm%
+$\Delta_{s.sus}$ = 0.01 mm%
+\newline%
+\newline%
+%
+$\Delta_{total}$ = 0.04 mm%
 \subsection*{For case 3}%
 \label{subsec:Forcase3}%
 
@@ -460,13 +535,13 @@ $\Delta_{total}$ = 5.94 mm%
 \newline%
 \newline%
 %
-$M_{ct.t}$ = 1 KNm%
+$M_{ct.t}$ = 4 KNm%
 \newline%
 %
 $M_{s,L}^{*}$ = 3 KNm%
 \newline%
 %
-$I_{ef,L}$ = 3626102 $mm^{4}$%
+$I_{ef,L}$ = 666666667 $mm^{4}$%
 \newline%
 \newline%
 %
@@ -474,13 +549,13 @@ $I_{ef,L}$ = 3626102 $mm^{4}$%
 \newline%
 \newline%
 %
-$M_{ct.t}$ = 1 KNm%
+$M_{ct.t}$ = 4 KNm%
 \newline%
 %
 $M_{s,M}^{*}$ = 2 KNm%
 \newline%
 %
-$I_{ef,M}$ = 4848707 $mm^{4}$%
+$I_{ef,M}$ = 666666667 $mm^{4}$%
 \newline%
 \newline%
 %
@@ -488,13 +563,13 @@ $I_{ef,M}$ = 4848707 $mm^{4}$%
 \newline%
 \newline%
 %
-$M_{ct.t}$ = 1 KNm%
+$M_{ct.t}$ = 4 KNm%
 \newline%
 %
 $M_{s,R}^{*}$ = 1 KNm%
 \newline%
 %
-$I_{ef,R}$ = 108897591 $mm^{4}$%
+$I_{ef,R}$ = 666666667 $mm^{4}$%
 \newline%
 \newline%
 %
@@ -502,26 +577,172 @@ Span Lx is an edge span, therefore $I_{ef}$ = half the midspan value plus half t
 \newline%
 \newline%
 %
-$I_{ef} = 0.5I_{ef,M} + 0.5I_{ef,L} = $4237405 $ mm^{4}$%
+$I_{ef} = 0.5I_{ef,M} + 0.5I_{ef,L} = $666666667 $ mm^{4}$%
 \newline%
 \newline%
 %
-$\Delta_{s} =$17.296 mm%
+$\Delta_{s} =$0.049 mm%
 \newline%
 \newline%
 %
-$w_{long} = G + \psi_{l}Q = $4 KN/m%
+$w_{long} = G + \psi_{l}Q = $18 KN/m%
 \newline%
 %
-$w_{short} = G + \psi_{s}Q = $ 4 KN/m%
-\newline%
-\newline%
-%
-$\Delta_{s.sus}$ = 6.14 mm%
+$w_{short} = G + \psi_{s}Q = $ 20 KN/m%
 \newline%
 \newline%
 %
-$\Delta_{total}$ = 29.57 mm%
+$\Delta_{s.sus}$ = 0.02 mm%
+\newline%
+\newline%
+%
+$\Delta_{total}$ = 0.08 mm%
+\subsection*{For case 4}%
+\label{subsec:Forcase4}%
+
+%
+\newline%
+\newline%
+%
+\textbf{At the left support:}%
+\newline%
+\newline%
+%
+$M_{ct.t}$ = 4 KNm%
+\newline%
+%
+$M_{s,L}^{*}$ = 9 KNm%
+\newline%
+%
+$I_{ef,L}$ = 65760686 $mm^{4}$%
+\newline%
+\newline%
+%
+\textbf{At the midpoint support:}%
+\newline%
+\newline%
+%
+$M_{ct.t}$ = 4 KNm%
+\newline%
+%
+$M_{s,M}^{*}$ = 2 KNm%
+\newline%
+%
+$I_{ef,M}$ = 666666667 $mm^{4}$%
+\newline%
+\newline%
+%
+\textbf{At the right support:}%
+\newline%
+\newline%
+%
+$M_{ct.t}$ = 4 KNm%
+\newline%
+%
+$M_{s,R}^{*}$ = 9 KNm%
+\newline%
+%
+$I_{ef,R}$ = 65760686 $mm^{4}$%
+\newline%
+\newline%
+%
+Span Lx is continuous, therefore $I_{ef}$ = half the midspan value plus one quarter of each support%
+\newline%
+\newline%
+%
+$I_{ef} = 0.5I_{ef,M} + 0.25I_{ef,L} + 0.25I_{ef,R} = $366213676 $ mm^{4}$%
+\newline%
+\newline%
+%
+$\Delta_{s} =$0.024 mm%
+\newline%
+\newline%
+%
+$w_{long} = G + \psi_{l}Q = $18 KN/m%
+\newline%
+%
+$w_{short} = G + \psi_{s}Q = $ 20 KN/m%
+\newline%
+\newline%
+%
+$\Delta_{s.sus}$ = 0.02 mm%
+\newline%
+\newline%
+%
+$\Delta_{total}$ = 0.06 mm%
+\subsection*{For case 5}%
+\label{subsec:Forcase5}%
+
+%
+\newline%
+\newline%
+%
+\textbf{At the left support:}%
+\newline%
+\newline%
+%
+$M_{ct.t}$ = 4 KNm%
+\newline%
+%
+$M_{s,L}^{*}$ = 1 KNm%
+\newline%
+%
+$I_{ef,L}$ = 666666667 $mm^{4}$%
+\newline%
+\newline%
+%
+\textbf{At the midpoint support:}%
+\newline%
+\newline%
+%
+$M_{ct.t}$ = 4 KNm%
+\newline%
+%
+$M_{s,M}^{*}$ = 2 KNm%
+\newline%
+%
+$I_{ef,M}$ = 666666667 $mm^{4}$%
+\newline%
+\newline%
+%
+\textbf{At the right support:}%
+\newline%
+\newline%
+%
+$M_{ct.t}$ = 4 KNm%
+\newline%
+%
+$M_{s,R}^{*}$ = 1 KNm%
+\newline%
+%
+$I_{ef,R}$ = 666666667 $mm^{4}$%
+\newline%
+\newline%
+%
+Span Lx is simply supported, therefore $I_{ef}$ = the value at midspan%
+\newline%
+\newline%
+%
+$I_{ef} = I_{ef,M} = $666666667 $ mm^{4}$%
+\newline%
+\newline%
+%
+$\Delta_{s} =$0.063 mm%
+\newline%
+\newline%
+%
+$w_{long} = G + \psi_{l}Q = $18 KN/m%
+\newline%
+%
+$w_{short} = G + \psi_{s}Q = $ 20 KN/m%
+\newline%
+\newline%
+%
+$\Delta_{s.sus}$ = 0.01 mm%
+\newline%
+\newline%
+%
+$\Delta_{total}$ = 0.08 mm%
 \subsection*{For case 6}%
 \label{subsec:Forcase6}%
 
@@ -533,13 +754,13 @@ $\Delta_{total}$ = 29.57 mm%
 \newline%
 \newline%
 %
-$M_{ct.t}$ = 1 KNm%
+$M_{ct.t}$ = 4 KNm%
 \newline%
 %
-$M_{s,L}^{*}$ = 4 KNm%
+$M_{s,L}^{*}$ = 5 KNm%
 \newline%
 %
-$I_{ef,L}$ = 3387211 $mm^{4}$%
+$I_{ef,L}$ = 100036892 $mm^{4}$%
 \newline%
 \newline%
 %
@@ -547,13 +768,13 @@ $I_{ef,L}$ = 3387211 $mm^{4}$%
 \newline%
 \newline%
 %
-$M_{ct.t}$ = 1 KNm%
+$M_{ct.t}$ = 4 KNm%
 \newline%
 %
-$M_{s,M}^{*}$ = 2 KNm%
+$M_{s,M}^{*}$ = 3 KNm%
 \newline%
 %
-$I_{ef,M}$ = 3829423 $mm^{4}$%
+$I_{ef,M}$ = 666666667 $mm^{4}$%
 \newline%
 \newline%
 %
@@ -561,13 +782,13 @@ $I_{ef,M}$ = 3829423 $mm^{4}$%
 \newline%
 \newline%
 %
-$M_{ct.t}$ = 1 KNm%
+$M_{ct.t}$ = 4 KNm%
 \newline%
 %
-$M_{s,R}^{*}$ = 1 KNm%
+$M_{s,R}^{*}$ = 2 KNm%
 \newline%
 %
-$I_{ef,R}$ = 8171753 $mm^{4}$%
+$I_{ef,R}$ = 666666667 $mm^{4}$%
 \newline%
 \newline%
 %
@@ -575,36 +796,260 @@ Span Lx is an edge span, therefore $I_{ef}$ = half the midspan value plus half t
 \newline%
 \newline%
 %
-$I_{ef} = 0.5I_{ef,M} + 0.5I_{ef,L} = $3608317 $ mm^{4}$%
+$I_{ef} = 0.5I_{ef,M} + 0.5I_{ef,L} = $383351779 $ mm^{4}$%
 \newline%
 \newline%
 %
-$\Delta_{s} =$29.008 mm%
+$\Delta_{s} =$0.129 mm%
 \newline%
 \newline%
 %
-$w_{long} = G + \psi_{l}Q = $4 KN/m%
+$w_{long} = G + \psi_{l}Q = $18 KN/m%
 \newline%
 %
-$w_{short} = G + \psi_{s}Q = $ 4 KN/m%
-\newline%
-\newline%
-%
-$\Delta_{s.sus}$ = 14.7 mm%
+$w_{short} = G + \psi_{s}Q = $ 20 KN/m%
 \newline%
 \newline%
 %
-$\Delta_{total}$ = 58.4 mm%
+$\Delta_{s.sus}$ = 0.06 mm%
+\newline%
+\newline%
+%
+$\Delta_{total}$ = 0.25 mm%
+\subsection*{For case 7}%
+\label{subsec:Forcase7}%
+
+%
+\newline%
+\newline%
+%
+\textbf{At the left support:}%
+\newline%
+\newline%
+%
+$M_{ct.t}$ = 4 KNm%
+\newline%
+%
+$M_{s,L}^{*}$ = 7 KNm%
+\newline%
+%
+$I_{ef,L}$ = 70679853 $mm^{4}$%
+\newline%
+\newline%
+%
+\textbf{At the midpoint support:}%
+\newline%
+\newline%
+%
+$M_{ct.t}$ = 4 KNm%
+\newline%
+%
+$M_{s,M}^{*}$ = 4 KNm%
+\newline%
+%
+$I_{ef,M}$ = 145381726 $mm^{4}$%
+\newline%
+\newline%
+%
+\textbf{At the right support:}%
+\newline%
+\newline%
+%
+$M_{ct.t}$ = 4 KNm%
+\newline%
+%
+$M_{s,R}^{*}$ = 2 KNm%
+\newline%
+%
+$I_{ef,R}$ = 666666667 $mm^{4}$%
+\newline%
+\newline%
+%
+Span Lx is an edge span, therefore $I_{ef}$ = half the midspan value plus half the value at the continuous support.%
+\newline%
+\newline%
+%
+$I_{ef} = 0.5I_{ef,M} + 0.5I_{ef,L} = $108030789 $ mm^{4}$%
+\newline%
+\newline%
+%
+$\Delta_{s} =$0.653 mm%
+\newline%
+\newline%
+%
+$w_{long} = G + \psi_{l}Q = $18 KN/m%
+\newline%
+%
+$w_{short} = G + \psi_{s}Q = $ 20 KN/m%
+\newline%
+\newline%
+%
+$\Delta_{s.sus}$ = 0.43 mm%
+\newline%
+\newline%
+%
+$\Delta_{total}$ = 1.51 mm%
+\subsection*{For case 8}%
+\label{subsec:Forcase8}%
+
+%
+\newline%
+\newline%
+%
+\textbf{At the left support:}%
+\newline%
+\newline%
+%
+$M_{ct.t}$ = 4 KNm%
+\newline%
+%
+$M_{s,L}^{*}$ = 1 KNm%
+\newline%
+%
+$I_{ef,L}$ = 666666667 $mm^{4}$%
+\newline%
+\newline%
+%
+\textbf{At the midpoint support:}%
+\newline%
+\newline%
+%
+$M_{ct.t}$ = 4 KNm%
+\newline%
+%
+$M_{s,M}^{*}$ = 4 KNm%
+\newline%
+%
+$I_{ef,M}$ = 458547466 $mm^{4}$%
+\newline%
+\newline%
+%
+\textbf{At the right support:}%
+\newline%
+\newline%
+%
+$M_{ct.t}$ = 4 KNm%
+\newline%
+%
+$M_{s,R}^{*}$ = 1 KNm%
+\newline%
+%
+$I_{ef,R}$ = 666666667 $mm^{4}$%
+\newline%
+\newline%
+%
+Span Lx is simply supported, therefore $I_{ef}$ = the value at midspan%
+\newline%
+\newline%
+%
+$I_{ef} = I_{ef,M} = $458547466 $ mm^{4}$%
+\newline%
+\newline%
+%
+$\Delta_{s} =$0.158 mm%
+\newline%
+\newline%
+%
+$w_{long} = G + \psi_{l}Q = $18 KN/m%
+\newline%
+%
+$w_{short} = G + \psi_{s}Q = $ 20 KN/m%
+\newline%
+\newline%
+%
+$\Delta_{s.sus}$ = 0.04 mm%
+\newline%
+\newline%
+%
+$\Delta_{total}$ = 0.24 mm%
+\subsection*{For case 9}%
+\label{subsec:Forcase9}%
+
+%
+\newline%
+\newline%
+%
+\textbf{At the left support:}%
+\newline%
+\newline%
+%
+$M_{ct.t}$ = 4 KNm%
+\newline%
+%
+$M_{s,L}^{*}$ = 2 KNm%
+\newline%
+%
+$I_{ef,L}$ = 666666667 $mm^{4}$%
+\newline%
+\newline%
+%
+\textbf{At the midpoint support:}%
+\newline%
+\newline%
+%
+$M_{ct.t}$ = 4 KNm%
+\newline%
+%
+$M_{s,M}^{*}$ = 6 KNm%
+\newline%
+%
+$I_{ef,M}$ = 77356694 $mm^{4}$%
+\newline%
+\newline%
+%
+\textbf{At the right support:}%
+\newline%
+\newline%
+%
+$M_{ct.t}$ = 4 KNm%
+\newline%
+%
+$M_{s,R}^{*}$ = 2 KNm%
+\newline%
+%
+$I_{ef,R}$ = 666666667 $mm^{4}$%
+\newline%
+\newline%
+%
+Span Lx is simply supported, therefore $I_{ef}$ = the value at midspan%
+\newline%
+\newline%
+%
+$I_{ef} = I_{ef,M} = $77356694 $ mm^{4}$%
+\newline%
+\newline%
+%
+$\Delta_{s} =$1.634 mm%
+\newline%
+\newline%
+%
+$w_{long} = G + \psi_{l}Q = $18 KN/m%
+\newline%
+%
+$w_{short} = G + \psi_{s}Q = $ 20 KN/m%
+\newline%
+\newline%
+%
+$\Delta_{s.sus}$ = 0.75 mm%
+\newline%
+\newline%
+%
+$\Delta_{total}$ = 3.14 mm%
 \newline%
 \newline%
 %
 \begin{tabular}{llll}%
 Summary of deflections&&&\\%
 \hline%
-1&0.63& mm&OK\\%
-2&5.94& mm&OK\\%
-3&29.57& mm&NG\\%
-6&58.4& mm&NG\\%
+1&0.03& mm&OK\\%
+2&0.04& mm&OK\\%
+3&0.08& mm&OK\\%
+4&0.06& mm&OK\\%
+5&0.08& mm&OK\\%
+6&0.25& mm&OK\\%
+7&1.51& mm&OK\\%
+8&0.24& mm&OK\\%
+9&3.14& mm&OK\\%
 \end{tabular}%
 \section*{Strength of Slabs in Bending AS3600:2018 Cl 9.1}%
 \label{sec:StrengthofSlabsinBendingAS36002018Cl9.1}%
@@ -645,7 +1090,7 @@ Determine bending capacity of section ($\phi M_{n}$):%
 \newline%
 \newline%
 %
-$\phi M_{n} = $4.5 KNm%
+$\phi M_{n} = $42.6 KNm%
 \newline%
 \newline%
 Determine bending moment demands:\newline%
@@ -712,76 +1157,171 @@ The moments, so calcualted, shall apply over a central region of the slab equal 
 \textbf{For case 1.\newline%
 \newline%
 }%
-$M_{x}^{*}$ = 0.7 KNm%
+$M_{x}^{*}$ = 3.0 KNm%
 \newline%
 \newline%
 %
-$M_{y}^{*}$ = 1.8 KNm%
+$M_{y}^{*}$ = 2.8 KNm%
 \newline%
 \newline%
 %
-$M_{x,negative}^{*}$ = 1.5 KNm%
+$M_{x,negative}^{*}$ = 6.9 KNm%
 \newline%
 \newline%
 %
-$M_{y,negative}^{*}$ = 4.9 KNm%
+$M_{y,negative}^{*}$ = 7.6 KNm%
 \newline%
 \newline%
 %
 \textbf{For case 2.\newline%
 \newline%
 }%
-$M_{x}^{*}$ = 2.7 KNm%
+$M_{x}^{*}$ = 3.8 KNm%
 \newline%
 \newline%
 %
-$M_{y}^{*}$ = 2.2 KNm%
+$M_{y}^{*}$ = 3.4 KNm%
 \newline%
 \newline%
 %
-$M_{x,negative}^{*}$ = 5.8 KNm%
+$M_{x,negative}^{*}$ = 8.4 KNm%
 \newline%
 \newline%
 %
-$M_{y,negative}^{*}$ = 5.0 KNm%
+$M_{y,negative}^{*}$ = 7.8 KNm%
 \newline%
 \newline%
 %
 \textbf{For case 3.\newline%
 \newline%
 }%
-$M_{x}^{*}$ = 2.5 KNm%
+$M_{x}^{*}$ = 3.4 KNm%
 \newline%
 \newline%
 %
-$M_{y}^{*}$ = 2.6 KNm%
+$M_{y}^{*}$ = 4.0 KNm%
 \newline%
 \newline%
 %
-$M_{x,negative}^{*}$ = 5.4 KNm%
+$M_{x,negative}^{*}$ = 7.5 KNm%
 \newline%
 \newline%
 %
-$M_{y,negative}^{*}$ = 6.3 KNm%
+$M_{y,negative}^{*}$ = 9.7 KNm%
+\newline%
+\newline%
+%
+\textbf{For case 4.\newline%
+\newline%
+}%
+$M_{x}^{*}$ = 4.5 KNm%
+\newline%
+\newline%
+%
+$M_{y}^{*}$ = 3.4 KNm%
+\newline%
+\newline%
+%
+$M_{x,negative}^{*}$ = 9.4 KNm%
+\newline%
+\newline%
+%
+$M_{y,negative}^{*}$ = 0.0 KNm%
+\newline%
+\newline%
+%
+\textbf{For case 5.\newline%
+\newline%
+}%
+$M_{x}^{*}$ = 3.4 KNm%
+\newline%
+\newline%
+%
+$M_{y}^{*}$ = 5.5 KNm%
+\newline%
+\newline%
+%
+$M_{x,negative}^{*}$ = 0.0 KNm%
+\newline%
+\newline%
+%
+$M_{y,negative}^{*}$ = 12.7 KNm%
 \newline%
 \newline%
 %
 \textbf{For case 6.\newline%
 \newline%
 }%
-$M_{x}^{*}$ = 3.2 KNm%
+$M_{x}^{*}$ = 4.4 KNm%
 \newline%
 \newline%
 %
-$M_{y}^{*}$ = 3.1 KNm%
+$M_{y}^{*}$ = 4.8 KNm%
 \newline%
 \newline%
 %
-$M_{x,negative}^{*}$ = 6.6 KNm%
+$M_{x,negative}^{*}$ = 9.3 KNm%
 \newline%
 \newline%
 %
-$M_{y,negative}^{*}$ = 6.6 KNm%
+$M_{y,negative}^{*}$ = 10.2 KNm%
+\newline%
+\newline%
+%
+\textbf{For case 7.\newline%
+\newline%
+}%
+$M_{x}^{*}$ = 5.5 KNm%
+\newline%
+\newline%
+%
+$M_{y}^{*}$ = 4.9 KNm%
+\newline%
+\newline%
+%
+$M_{x,negative}^{*}$ = 11.2 KNm%
+\newline%
+\newline%
+%
+$M_{y,negative}^{*}$ = 0.0 KNm%
+\newline%
+\newline%
+%
+\textbf{For case 8.\newline%
+\newline%
+}%
+$M_{x}^{*}$ = 4.7 KNm%
+\newline%
+\newline%
+%
+$M_{y}^{*}$ = 6.5 KNm%
+\newline%
+\newline%
+%
+$M_{x,negative}^{*}$ = 0.0 KNm%
+\newline%
+\newline%
+%
+$M_{y,negative}^{*}$ = 13.8 KNm%
+\newline%
+\newline%
+%
+\textbf{For case 9.\newline%
+\newline%
+}%
+$M_{x}^{*}$ = 6.2 KNm%
+\newline%
+\newline%
+%
+$M_{y}^{*}$ = 6.9 KNm%
+\newline%
+\newline%
+%
+$M_{x,negative}^{*}$ = 0.0 KNm%
+\newline%
+\newline%
+%
+$M_{y,negative}^{*}$ = 0.0 KNm%
 \newline%
 \newline%
 

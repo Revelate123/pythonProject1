@@ -169,8 +169,8 @@ def bearing(Dimensions,allowable_end_pressure,density_concrete,density_soil,surc
                 (Dimensions['Ltoe'] + Dimensions['Lheel']) * 10 ** -3) ** 2
         a_ULS = (Dimensions['Ltoe'] + Dimensions['Lheel']) * 10 ** -3
     elif x_ULS > centroid_N * 10 ** -3:
-        qmax_ULS = 10
-        a_ULS = 10000
+       qmax_ULS = 10
+       a_ULS = 10000
 
     print('Auls', a_ULS,PA1,PA2,qmax_ULS)
     if Top_restraint == True:
@@ -419,5 +419,5 @@ def Soldier(values):
     return {'Pa':Pa,'Pw':Pw,'d':d,'D':D,'E':E,'Mmax':Mmax,'f':f,'M':M,'V':V}
 x = 450
 values = {'Friction_angle':26,'Density_soil':20,'H':1.5,'surcharge':5,'Dia':x,'Ka':0.4,'Kp':2.9,'Spacing':5*x/1000,'cohesion':0,'bf':150,'fc':20,'SleeperH':0.4,'Water':True,'Water_table':0}
-Soldier(values)
+#Soldier(values)
 

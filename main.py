@@ -5,7 +5,7 @@
 #load in steel functions which perform operations
 
 #Choose sectiontype and size
-
+from decimal import Decimal
 import PySimpleGUI as sg
 import steel_functions as st
 import Bolt_checks as bc
@@ -39,6 +39,7 @@ from matplotlib.ticker import NullFormatter
 import numpy as np
 
 def menu(variables):
+    sg.theme('GrayGrayGray')
     layout1 = [
         [sg.Button('Steel Calculator', key = 'Steel_calculator')],
         [sg.Button('Bolt group actions', key = 'Bolts')],
@@ -47,6 +48,7 @@ def menu(variables):
         [sg.Button('Concrete Beam Calculator', key = 'Concrete_calculator')],
         [sg.Button('Retaining Wall Calculator', key = 'Retaining_wall')],
         [sg.Button('Soldier Pile Retaining wall', key = 'Soldier pile')],
+        [sg.Button('Laterally Loaded Pile', key='Laterally loaded pile')],
         [sg.Button('Pad Footing Calculator', key ='Pad_footing')],
         [sg.Button('Wind Calculator', key='Wind_calculator')]
     ]
@@ -83,6 +85,9 @@ def menu(variables):
         elif event == 'Soldier pile':
             window1.close()
             Soldier_pile()
+        elif event == 'Laterally loaded pile':
+            window1.close()
+            Lateral_pile()
         elif event == 'Pad_footing':
             window1.close()
             Pad_footing()
@@ -120,6 +125,131 @@ def isfloat(num):
         return True
     except ValueError:
         return False
+
+
+def Lateral_pile():
+    layout = [
+        [sg.Column([
+            [sg.Text('Soil Parameters')],
+            [sg.Text('Friction angle:')],
+            [sg.Text('Density of soil:')],
+            [sg.Text('Cohesion:')],
+            [sg.Text('Angle of Backfill:')],
+            [sg.Text('Ka')],
+            [sg.Text('Kp')],
+            [sg.Text('Retained Height')],
+            [sg.Text('Pile Diameter')],
+            [sg.Text('Pile spacing')],
+            [sg.Text('Surcharge')],
+
+            [sg.Text('Height of sleeper:')],
+            [sg.Text('Depth to Water Table:')]
+
+
+        ]),sg.Column([
+            [sg.Text()],
+            [sg.Input(default_text=26,size=(5,1),key='Friction_angle')],
+            [sg.Input(default_text=20,size=(5,1),key='Density_soil')],
+            [sg.Input(default_text=5,size=(5,1),key='cohesion')],
+            [sg.Input(default_text=15,size=(5,1),key='beta')],
+            [sg.Input(default_text=0.4,size=(5,1),key='Ka')],
+            [sg.Input(default_text=2.9, size=(5, 1), key='Kp')],
+            [sg.Input(default_text=1.5,size=(5,1),key='H')],
+            [sg.Input(default_text=450,size=(5,1),key='Dia')],
+            [sg.Input(default_text=2.25,size=(5,1),key ='Spacing')],
+            [sg.Input(default_text=5,size=(5,1),key='surcharge')],
+
+
+            [sg.Input(default_text=400, size=(5, 1), key='SleeperH')],
+            [sg.Input(default_text=0,size=(5,1),key='Water_table')]
+        ]),sg.Column([
+            [sg.Text()],
+            [sg.Text('Degrees')],
+            [sg.Text('KN/m3')],
+            [sg.Text('KPa')],
+            [sg.Text('Degrees')],
+            [sg.Checkbox(default=True,text='Override',key='Ka_over')],
+            [sg.Checkbox(default=True,text='Override',key='Kp_over')],
+
+            [sg.Text('m')],
+            [sg.Text('mm')],
+            [sg.Text('mm')],
+            [sg.Text('KPa')],
+
+            [sg.Text('mm')],
+            [sg.Text('m')],
+
+        ]),sg.Column(
+            blank(5) + [[sg.Text(key='Ka1')],[sg.Text(key='Kp1')]] + blank(5) +[[sg.Checkbox(default=True, text='Water Table', key='Water')]]
+        )
+
+    ],
+    [sg.Text('Results:')],
+    [sg.Column([
+        [sg.Text('d:')],
+        [sg.Text('D:')],
+        [sg.Text('Total Embedment, E:')],
+        [sg.Text('Soil Force, Pa:')],
+        [sg.Text('Surcharge Force, Pw:')],
+        [sg.Text('Max Moment:')],
+        [sg.Text('Effective pile width factor:')],
+
+        [sg.Text('Max moment on sleeper:')],
+        [sg.Text('Max shear on sleeper:')]
+    ]),sg.Column([
+        [sg.Text(key='d')],
+        [sg.Text(key='D')],
+        [sg.Text(key='E')],
+        [sg.Text(key='Pa')],
+        [sg.Text(key='Pw')],
+        [sg.Text(key='Mmax')],
+        [sg.Text(key='f')],
+
+        [sg.Text(key='M')],
+        [sg.Text(key='V')]
+    ]),sg.Column([
+        [sg.Text('m')],
+        [sg.Text('m')],
+        [sg.Text('m')],
+        [sg.Text('KN')],
+        [sg.Text('KN')],
+        [sg.Text('KNm')],
+        [sg.Text()],
+
+        [sg.Text('KNm')],
+        [sg.Text('KN')]
+    ])],
+        [sg.Text()],
+        [sg.Button('Calculate', key='Calculate'), sg.Button('Back', key='back')],
+        [sg.Button('Print calculations', key='print_calcs')],
+        [sg.Text('Type Job Name:'), sg.Input(default_text='Soldier Pile', key='job_name')],
+        [sg.Text('Choose destination:'),
+         sg.Input(key='print_location', default_text=r'C:\Users\tduffett\PycharmProjects\pythonProject1'),
+         sg.FolderBrowse()],
+        [sg.Button('Back', key='back')],
+    ]
+
+    window = sg.Window('Soldier Pile Retaining wall',layout)
+
+    while True:
+        event, values = window.read()
+        if event == sg.WIN_CLOSED:
+            break
+        elif event == 'Calculate':
+            for i in values:
+                if isfloat(values[i]) == True:
+                    values[i] = float(values[i])
+            if values['Ka_over'] == False:
+                values['Ka'] = (math.cos(values['beta']/180*math.pi) - math.sqrt(math.cos(values['beta']/180*math.pi)**2 - math.cos(values['Friction_angle']/180*math.pi)**2))/(math.cos(values['beta']/180*math.pi) + math.sqrt(math.cos(values['beta']/180*math.pi)**2 - math.cos(values['Friction_angle']/180*math.pi)**2))
+                window['Ka1'].update(str(round(values['Ka'],2)))
+            if values['Kp_over'] == False:
+                values['Kp'] = math.tan((45 + values['Friction_angle']/2)/180*math.pi)**2
+                window['Kp1'].update(str(round(values['Kp'], 2)))
+            Result = Retaining_wall_script.Soldier(values)
+            for i in Result:
+                window[i].update(str(round(Result[i],3)))
+
+
 
 def Soldier_pile():
     layout = [
@@ -548,7 +678,6 @@ def Retaining_wall():
             menu(variables)
 
 
-
 def Wind():
     layout = [
         [sg.Text('Base Wind pressure calculator')],
@@ -759,16 +888,20 @@ def Concrete_Beam_Layout(concrete_beam):
                     [sg.Text('   KNm',key='Mcr.t')]
                 ]),
                 sg.Column([
-                    [sg.Text('\u03C3scr = ')]
+                    [sg.Text('\u03C3scr = ')],
+                    [sg.Text('Neutral axis = ')]
                 ]),
                 sg.Column([
-                    [sg.Text('   MPa', key='steel_stress')]
+                    [sg.Text('   MPa', key='steel_stress')],
+                    [sg.Text('',key = 'dn')]
                 ]),
                 sg.Column([
-                    [sg.Text('Failure Mode:')]
+                    [sg.Text('Failure Mode:')],
+                    [sg.Text('Ief:')]
                 ]),
                 sg.Column([
-                    [sg.Text('   ', key='Failure_mode')]
+                    [sg.Text('   ', key='Failure_mode')],
+                    [sg.Text('   ', key='Ief')]
                 ])
             ],
             [sg.Button('Calculate', key='Calculate')],
@@ -859,12 +992,14 @@ def Concrete_Beam(concrete_beam):
             window['Vuc'].update(str(round(result1['Vuc']/1000*0.6,2)) + '   KN')
             window['Vus'].update(str(round(result1['Vus'] / 1000*0.6, 2)) + '   KN')
             window['Vu'].update(str(round((result1['Vus'] + result1['Vuc'])/1000*0.6, 2)) + '   KN')
-            window['Icr'].update(str(round(result2['Icr'])) + ' mm^4')
+            window['Icr'].update(str("{:.3e}".format(result2['Icr'])) + ' mm^4')
             window['Mcr.t'].update(str(round(result2['Mcr.t'],1)) + ' KNm')
             window['steel_stress'].update(str(round(result2['steel_stress'])) + ' MPa')
             window['Mu,min'].update(str(round(result['Mu_min']*0.65,1))+ ' KNm')
             window['Ec'].update(str(round(result2['Ec'])) + ' GPa')
-            window['Ig'].update(str(round(result2['Ig'])) + ' mm4')
+            window['Ig'].update(str("{:.3e}".format(result2['Ig'])) + ' mm4')
+            window['dn'].update(str(round(result2['dn'])) + ' mm')
+            window['Ief'].update(str("{:.3e}".format(result2['Ief'])) + ' mm4')
             if result['Failure mode'] == 'Tensile failure':
                 window['Failure_mode'].update(result['Failure mode'],text_color='green')
             else:
@@ -907,7 +1042,7 @@ def Timber():
     layout = [[sg.Column([[sg.Text('Timber Calculator')],
               [sg.Input(key = 'b',size=(5,1),default_text='45'),sg.Text('Breadth')],
               [sg.Input(key = 'd',size = (5,1),default_text='240'),sg.Text('Depth')],
-              [sg.Combo(['MGP 10', 'MGP 12','MGP 15', 'meySPAN 13'],key = 'grade',default_value='MGP 10',size=(15,1)),sg.Text('Grade')],
+              [sg.Combo(['MGP 10', 'MGP 12','MGP 15', 'meySPAN 13','F17','F27'],key = 'grade',default_value='MGP 10',size=(15,1)),sg.Text('Grade')],
               [sg.Combo(['Seasoned','Unseasoned'],default_value='Seasoned',key = 'Seasoned'),sg.Text('Seasoned')],
               [sg.Combo(['5 seconds', '5 minutes', '5 hours', '5 days','5 months','50+ years'],default_value='5 months',key = 'load_duration'),sg.Text('Load Duration')],
               [sg.Combo(['Yes','No'],key='nailed',size=(5,1),default_value='Yes'),sg.Text('Are members nailed together?')],
@@ -1005,7 +1140,7 @@ def steel_calculator():
     print(SectionSize)
     # load in GUI library
 
-    # sg.theme('LightBrown11')
+
     # ttk_style = 'vista'
     layout = [
         [sg.Column([

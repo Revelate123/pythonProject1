@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.7) (preloaded format=pdflatex 2022.8.19)  1 MAR 2023 10:00
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.7) (preloaded format=pdflatex 2022.8.19)  16 AUG 2023 06:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -246,87 +246,163 @@ Underfull \hbox (badness 10000) in paragraph at lines 37--54
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 79--149
+Underfull \hbox (badness 10000) in paragraph at lines 79--224
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 79--149
+Underfull \hbox (badness 10000) in paragraph at lines 79--224
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 79--149
+Underfull \hbox (badness 10000) in paragraph at lines 79--224
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 79--149
+Underfull \hbox (badness 10000) in paragraph at lines 79--224
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 79--149
+Underfull \hbox (badness 10000) in paragraph at lines 79--224
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 79--149
+Underfull \hbox (badness 10000) in paragraph at lines 79--224
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 79--149
+Underfull \hbox (badness 10000) in paragraph at lines 79--224
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 79--149
+Underfull \hbox (badness 10000) in paragraph at lines 79--224
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 79--149
+Underfull \hbox (badness 10000) in paragraph at lines 79--224
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 79--149
+Underfull \hbox (badness 10000) in paragraph at lines 79--224
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 79--149
+Underfull \hbox (badness 10000) in paragraph at lines 79--224
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 79--149
+Underfull \hbox (badness 10000) in paragraph at lines 79--224
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 79--149
+Underfull \hbox (badness 10000) in paragraph at lines 79--224
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 79--149
+Underfull \hbox (badness 10000) in paragraph at lines 79--224
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 79--149
+Underfull \hbox (badness 10000) in paragraph at lines 79--224
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 79--224
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 79--224
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 79--224
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 79--224
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 79--224
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 79--224
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 79--224
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 79--224
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 79--224
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 79--224
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 79--224
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 79--224
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 79--224
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 79--224
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 79--224
 
  []
 
 [1
 
 {C:/Users/tduffett/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
+[2]
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.185 $I_
+l.260 $I_
          {ef.max}$ = maximum effective second moment of area and is taken as...
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -334,7 +410,7 @@ you left one out. Proceed, with fingers crossed.
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
                    m
-l.193 $\hspace*{15mm}b \hspace{5mm}= \hspace{5m}
+l.268 $\hspace*{15mm}b \hspace{5mm}= \hspace{5m}
                                                 $width of the cross-section ...
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -346,103 +422,103 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.221 \subsection
+l.296 \subsection
                  *{Long{-}term deflection AS3600:2018  Cl 8.5.3.2}%
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 157--221
+Underfull \hbox (badness 10000) in paragraph at lines 232--296
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 157--221
+Underfull \hbox (badness 10000) in paragraph at lines 232--296
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 157--221
+Underfull \hbox (badness 10000) in paragraph at lines 232--296
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 157--221
+Underfull \hbox (badness 10000) in paragraph at lines 232--296
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 157--221
+Underfull \hbox (badness 10000) in paragraph at lines 232--296
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 157--221
+Underfull \hbox (badness 10000) in paragraph at lines 232--296
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 157--221
+Underfull \hbox (badness 10000) in paragraph at lines 232--296
 
  []
 
 
-Overfull \hbox (28.2631pt too wide) in paragraph at lines 157--221
+Overfull \hbox (28.2631pt too wide) in paragraph at lines 232--296
 \T1/lmr/m/n/10 I$[]$ = max-i-mum ef-fec-tive sec-ond mo-ment of area and is tak
 en as $\OML/lmm/m/it/10 I$\T1/lmr/m/n/10 , for re-in-forced sec-tions when  $\O
 ML/lmm/m/it/10 p \OT1/lmr/m/n/10 =
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 157--221
+Underfull \hbox (badness 10000) in paragraph at lines 232--296
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 157--221
+Underfull \hbox (badness 10000) in paragraph at lines 232--296
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 157--221
+Underfull \hbox (badness 10000) in paragraph at lines 232--296
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 157--221
+Underfull \hbox (badness 10000) in paragraph at lines 232--296
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 157--221
+Underfull \hbox (badness 10000) in paragraph at lines 232--296
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 157--221
+Underfull \hbox (badness 10000) in paragraph at lines 232--296
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 157--221
+Underfull \hbox (badness 10000) in paragraph at lines 232--296
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 157--221
+Underfull \hbox (badness 10000) in paragraph at lines 232--296
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 157--221
+Underfull \hbox (badness 10000) in paragraph at lines 232--296
 
  []
 
-[2]
+[3]
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.258 $\Delta
+l.333 $\Delta
              {s} = \frac{L_{ox}^{2}}{96E_{c}I_{ef.av}}(M_{L.s} + 10M_{M.s} +...
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -450,7 +526,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.262 $\Delta
+l.337 $\Delta
              _{s.sus} = \frac{w_{long}}{w_{short}}\Delta_{s}%
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -458,46 +534,45 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.263 \subsection
+l.338 \subsection
                  *{Calculations}%
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 225--263
+Underfull \hbox (badness 10000) in paragraph at lines 300--338
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 225--263
+Underfull \hbox (badness 10000) in paragraph at lines 300--338
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 225--263
+Underfull \hbox (badness 10000) in paragraph at lines 300--338
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 225--263
+Underfull \hbox (badness 10000) in paragraph at lines 300--338
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 225--263
+Underfull \hbox (badness 10000) in paragraph at lines 300--338
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 225--263
+Underfull \hbox (badness 10000) in paragraph at lines 300--338
 
  []
 
-[3]
 ! Extra }, or forgotten $.
 <template> \unskip \hfil }
                           \hskip \tabcolsep \endtemplate 
-l.297 &
+l.372 &
        &&\\%
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -508,7 +583,7 @@ deleted material, e.g., by typing `I$}'.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.297 &
+l.372 &
        &&\\%
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -516,7 +591,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.297 &
+l.372 &
        &&\\%
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -527,7 +602,7 @@ my insertion and my current dilemma will both disappear.
 ! Extra }, or forgotten $.
 <template> \unskip \hfil }
                           \hskip \tabcolsep \endtemplate 
-l.299 &
+l.374 &
        &&\\%
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -538,7 +613,7 @@ deleted material, e.g., by typing `I$}'.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.299 &
+l.374 &
        &&\\%
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -546,7 +621,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.299 &
+l.374 &
        &&\\%
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -557,7 +632,7 @@ my insertion and my current dilemma will both disappear.
 ! Extra }, or forgotten $.
 <template> \unskip \hfil }
                           \hskip \tabcolsep \endtemplate 
-l.300 Concrete flexural strength, $f'_{ct.f}&
+l.375 Concrete flexural strength, $f'_{ct.f}&
                                              =&3.0& MPa\\%
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -568,7 +643,7 @@ deleted material, e.g., by typing `I$}'.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.300 Concrete flexural strength, $f'_{ct.f}&
+l.375 Concrete flexural strength, $f'_{ct.f}&
                                              =&3.0& MPa\\%
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -576,7 +651,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.300 Concrete flexural strength, $f'_{ct.f}&
+l.375 Concrete flexural strength, $f'_{ct.f}&
                                              =&3.0& MPa\\%
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -585,113 +660,32 @@ really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 267--306
+Underfull \hbox (badness 10000) in paragraph at lines 342--381
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 267--306
+Underfull \hbox (badness 10000) in paragraph at lines 342--381
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 267--306
+Underfull \hbox (badness 10000) in paragraph at lines 342--381
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 267--306
+Underfull \hbox (badness 10000) in paragraph at lines 342--381
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 267--306
+Underfull \hbox (badness 10000) in paragraph at lines 342--381
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 267--306
-
- []
-
-
-! LaTeX Error: There's no line here to end.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.310 \newline
-              %
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-! LaTeX Error: There's no line here to end.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.311 \newline
-              %
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 313--379
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 313--379
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 313--379
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 313--379
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 313--379
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 313--379
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 313--379
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 313--379
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 313--379
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 313--379
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 313--379
+Underfull \hbox (badness 10000) in paragraph at lines 342--381
 
  []
 
@@ -703,7 +697,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.383 \newline
+l.385 \newline
               %
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -716,64 +710,64 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.384 \newline
+l.386 \newline
               %
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 386--452
+Underfull \hbox (badness 10000) in paragraph at lines 388--454
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 386--452
+Underfull \hbox (badness 10000) in paragraph at lines 388--454
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 386--452
+Underfull \hbox (badness 10000) in paragraph at lines 388--454
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 386--452
+Underfull \hbox (badness 10000) in paragraph at lines 388--454
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 386--452
+Underfull \hbox (badness 10000) in paragraph at lines 388--454
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 386--452
+Underfull \hbox (badness 10000) in paragraph at lines 388--454
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 386--452
+Underfull \hbox (badness 10000) in paragraph at lines 388--454
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 386--452
+Underfull \hbox (badness 10000) in paragraph at lines 388--454
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 386--452
+Underfull \hbox (badness 10000) in paragraph at lines 388--454
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 386--452
+Underfull \hbox (badness 10000) in paragraph at lines 388--454
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 386--452
+Underfull \hbox (badness 10000) in paragraph at lines 388--454
 
  []
 
@@ -784,7 +778,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.456 \newline
+l.458 \newline
               %
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -797,64 +791,64 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.457 \newline
+l.459 \newline
               %
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 459--525
+Underfull \hbox (badness 10000) in paragraph at lines 461--527
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 459--525
+Underfull \hbox (badness 10000) in paragraph at lines 461--527
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 459--525
+Underfull \hbox (badness 10000) in paragraph at lines 461--527
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 459--525
+Underfull \hbox (badness 10000) in paragraph at lines 461--527
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 459--525
+Underfull \hbox (badness 10000) in paragraph at lines 461--527
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 459--525
+Underfull \hbox (badness 10000) in paragraph at lines 461--527
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 459--525
+Underfull \hbox (badness 10000) in paragraph at lines 461--527
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 459--525
+Underfull \hbox (badness 10000) in paragraph at lines 461--527
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 459--525
+Underfull \hbox (badness 10000) in paragraph at lines 461--527
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 459--525
+Underfull \hbox (badness 10000) in paragraph at lines 461--527
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 459--525
+Underfull \hbox (badness 10000) in paragraph at lines 461--527
 
  []
 
@@ -866,7 +860,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.529 \newline
+l.531 \newline
               %
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -879,102 +873,68 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.530 \newline
+l.532 \newline
               %
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 532--609
+Underfull \hbox (badness 10000) in paragraph at lines 534--600
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 532--609
+Underfull \hbox (badness 10000) in paragraph at lines 534--600
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 532--609
+Underfull \hbox (badness 10000) in paragraph at lines 534--600
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 532--609
+Underfull \hbox (badness 10000) in paragraph at lines 534--600
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 532--609
+Underfull \hbox (badness 10000) in paragraph at lines 534--600
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 532--609
+Underfull \hbox (badness 10000) in paragraph at lines 534--600
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 532--609
+Underfull \hbox (badness 10000) in paragraph at lines 534--600
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 532--609
+Underfull \hbox (badness 10000) in paragraph at lines 534--600
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 532--609
+Underfull \hbox (badness 10000) in paragraph at lines 534--600
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 532--609
+Underfull \hbox (badness 10000) in paragraph at lines 534--600
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 532--609
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 532--609
+Underfull \hbox (badness 10000) in paragraph at lines 534--600
 
  []
 
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 615--628
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 615--628
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 615--628
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 644--655
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 644--655
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 644--655
-
- []
-
 
 ! LaTeX Error: There's no line here to end.
 
@@ -982,7 +942,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.657 \newline
+l.604 \newline
               %
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -995,63 +955,586 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.658 \newline
+l.605 \newline
               %
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 660--697
+Underfull \hbox (badness 10000) in paragraph at lines 607--673
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 660--697
+Underfull \hbox (badness 10000) in paragraph at lines 607--673
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 660--697
+Underfull \hbox (badness 10000) in paragraph at lines 607--673
 
  []
 
 
-Overfull \hbox (73.33096pt too wide) in paragraph at lines 660--697
-[] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 660--697
+Underfull \hbox (badness 10000) in paragraph at lines 607--673
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 660--697
+Underfull \hbox (badness 10000) in paragraph at lines 607--673
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 660--697
+Underfull \hbox (badness 10000) in paragraph at lines 607--673
 
  []
 
 
-Overfull \hbox (22.38249pt too wide) in paragraph at lines 660--697
-[] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 660--697
+Underfull \hbox (badness 10000) in paragraph at lines 607--673
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 660--697
+Underfull \hbox (badness 10000) in paragraph at lines 607--673
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 607--673
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 607--673
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 607--673
+
+ []
+
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.677 \newline
+              %
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.678 \newline
+              %
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 680--746
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 680--746
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 680--746
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 680--746
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 680--746
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 680--746
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 680--746
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 680--746
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 680--746
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 680--746
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 680--746
 
  []
 
 [7]
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.750 \newline
+              %
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.751 \newline
+              %
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 753--819
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 753--819
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 753--819
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 753--819
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 753--819
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 753--819
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 753--819
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 753--819
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 753--819
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 753--819
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 753--819
+
+ []
+
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.823 \newline
+              %
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.824 \newline
+              %
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 826--892
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 826--892
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 826--892
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 826--892
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 826--892
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 826--892
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 826--892
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 826--892
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 826--892
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 826--892
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 826--892
+
+ []
+
+[8]
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.896 \newline
+              %
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.897 \newline
+              %
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 899--965
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 899--965
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 899--965
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 899--965
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 899--965
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 899--965
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 899--965
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 899--965
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 899--965
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 899--965
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 899--965
+
+ []
+
+[9]
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.969 \newline
+              %
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.970 \newline
+              %
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 972--1054
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 972--1054
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 972--1054
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 972--1054
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 972--1054
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 972--1054
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 972--1054
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 972--1054
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 972--1054
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 972--1054
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 972--1054
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 972--1054
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1060--1073
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1060--1073
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1060--1073
+
+ []
+
+[10]
+Underfull \hbox (badness 10000) in paragraph at lines 1089--1100
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1089--1100
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1089--1100
+
+ []
+
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1102 \newline
+               %
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1103 \newline
+               %
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1105--1142
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1105--1142
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1105--1142
+
+ []
+
+
+Overfull \hbox (73.33096pt too wide) in paragraph at lines 1105--1142
+[] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1105--1142
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1105--1142
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1105--1142
+
+ []
+
+
+Overfull \hbox (22.38249pt too wide) in paragraph at lines 1105--1142
+[] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1105--1142
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1105--1142
+
+ []
+
 
 ! LaTeX Error: Unicode character ^^H (U+0008)
                not set up for use with LaTeX.
@@ -1060,7 +1543,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.706 ...ha\_\{x\}\$}&Long span coefficients ($^^H
+l.1151 ...a\_\{x\}\$}&Long span coefficients ($^^H
                                                   eta_{y}$ and $^^Glpha_{y}$...
 
 You may provide a definition with
@@ -1074,134 +1557,259 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.706 ... span coefficients ($^^Heta_{y}$ and $^^G
+l.1151 ...span coefficients ($^^Heta_{y}$ and $^^G
                                                   lpha_{y}$) for all values ...
 
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-Overfull \hbox (128.79294pt too wide) in paragraph at lines 705--708
+Overfull \hbox (128.79294pt too wide) in paragraph at lines 1150--1153
 [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 714--787
+Underfull \hbox (badness 10000) in paragraph at lines 1159--1327
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 714--787
+Underfull \hbox (badness 10000) in paragraph at lines 1159--1327
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 714--787
+Underfull \hbox (badness 10000) in paragraph at lines 1159--1327
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 714--787
+Underfull \hbox (badness 10000) in paragraph at lines 1159--1327
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 714--787
+Underfull \hbox (badness 10000) in paragraph at lines 1159--1327
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 714--787
+Underfull \hbox (badness 10000) in paragraph at lines 1159--1327
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 714--787
+Underfull \hbox (badness 10000) in paragraph at lines 1159--1327
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 714--787
+Underfull \hbox (badness 10000) in paragraph at lines 1159--1327
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 714--787
+Underfull \hbox (badness 10000) in paragraph at lines 1159--1327
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 714--787
+Underfull \hbox (badness 10000) in paragraph at lines 1159--1327
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 714--787
+Underfull \hbox (badness 10000) in paragraph at lines 1159--1327
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 714--787
+Underfull \hbox (badness 10000) in paragraph at lines 1159--1327
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 714--787
+Underfull \hbox (badness 10000) in paragraph at lines 1159--1327
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 714--787
+Underfull \hbox (badness 10000) in paragraph at lines 1159--1327
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 714--787
+Underfull \hbox (badness 10000) in paragraph at lines 1159--1327
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 714--787
+Underfull \hbox (badness 10000) in paragraph at lines 1159--1327
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 714--787
+Underfull \hbox (badness 10000) in paragraph at lines 1159--1327
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 714--787
+Underfull \hbox (badness 10000) in paragraph at lines 1159--1327
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 714--787
+Underfull \hbox (badness 10000) in paragraph at lines 1159--1327
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 714--787
+Underfull \hbox (badness 10000) in paragraph at lines 1159--1327
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 714--787
+Underfull \hbox (badness 10000) in paragraph at lines 1159--1327
 
  []
 
 
+Underfull \hbox (badness 10000) in paragraph at lines 1159--1327
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1159--1327
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1159--1327
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1159--1327
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1159--1327
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1159--1327
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1159--1327
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1159--1327
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1159--1327
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1159--1327
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1159--1327
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1159--1327
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1159--1327
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1159--1327
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1159--1327
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1159--1327
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1159--1327
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1159--1327
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1159--1327
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1159--1327
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1159--1327
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1159--1327
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1159--1327
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1159--1327
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1159--1327
+
+ []
+
+[11] [12] 
 AED: lastpage setting LastPage
-[8] (slab.aux)
+[13] (slab.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 1552 strings out of 478338
- 27755 string characters out of 2835284
- 337532 words of memory out of 3000000
- 20001 multiletter control sequences out of 15000+600000
+ 1557 strings out of 478338
+ 27840 string characters out of 2835284
+ 340580 words of memory out of 3000000
+ 20006 multiletter control sequences out of 15000+600000
  499011 words of font info for 45 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,8n,62p,357b,153s stack positions out of 10000i,1000n,20000p,200000b,80000s
@@ -1223,9 +1831,9 @@ nts/type1/public/lm/lmr7.pfb><C:/Users/tduffett/AppData/Local/Programs/MiKTeX/f
 onts/type1/public/lm/lmsy10.pfb><C:/Users/tduffett/AppData/Local/Programs/MiKTe
 X/fonts/type1/public/lm/lmsy5.pfb><C:/Users/tduffett/AppData/Local/Programs/MiK
 TeX/fonts/type1/public/lm/lmsy7.pfb>
-Output written on slab.pdf (8 pages, 205961 bytes).
+Output written on slab.pdf (13 pages, 213535 bytes).
 PDF statistics:
- 97 PDF objects out of 1000 (max. 8388607)
+ 113 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
