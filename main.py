@@ -10,14 +10,14 @@ import steel_functions as st
 import Bolt_checks as bc
 import math
 import sys
-import csv
+
 sys.path.append("../")
 from Timber.Timber import beam_moment, beam_shear, print_calcs, deflection_check
 import Concrete
 import Retaining_wall as Retaining_wall_script
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 import matplotlib
-from resources import key_check
+from resources import key_check, variable_write, isfloat, variable, blank
 
 matplotlib.use('TkAgg')
 
@@ -69,169 +69,9 @@ def menu(variables):
         elif event == 'Soldier pile':
             window1.close()
             soldier_pile()
-        elif event == 'Laterally loaded pile':
-            window1.close()
-            Lateral_pile()
-        elif event == 'Pad_footing':
-            window1.close()
-            Pad_footing()
         elif event == Sg.WIN_CLOSED:
             break
     window1.close()
-
-
-def variable_write(values, Name):
-    # if values['Member Type'] == 'Beam':
-    with open(Name + '.txt', 'w', newline='') as csv_file:
-        data = [[str(i), values[i]] for i in values]
-        print(data)
-        writer = csv.writer(csv_file)
-        writer.writerows(data)
-
-
-def variable(Name):
-    Dictionary = {}
-    with open(str(Name) + '.txt') as csv_file:
-        csv_reader = csv.reader(csv_file, delimiter=',')
-        for row in csv_reader:
-            Dictionary[row[0]] = row[1]
-    return Dictionary
-
-
-def isfloat(num):
-    try:
-        float(num)
-        return True
-    except ValueError:
-        return False
-
-
-def Lateral_pile():
-    layout = [
-        [Sg.Column([
-            [Sg.Text('Soil Parameters')],
-            [Sg.Text('Friction angle:')],
-            [Sg.Text('Density of soil:')],
-            [Sg.Text('Cohesion:')],
-            [Sg.Text('Angle of Backfill:')],
-            [Sg.Text('Ka')],
-            [Sg.Text('Kp')],
-            [Sg.Text('Retained Height')],
-            [Sg.Text('Pile Diameter')],
-            [Sg.Text('Pile spacing')],
-            [Sg.Text('Surcharge')],
-
-            [Sg.Text('Height of sleeper:')],
-            [Sg.Text('Depth to Water Table:')]
-
-        ]), Sg.Column([
-            [Sg.Text()],
-            [Sg.Input(default_text=26, size=(5, 1), key='Friction_angle')],
-            [Sg.Input(default_text=20, size=(5, 1), key='Density_soil')],
-            [Sg.Input(default_text=5, size=(5, 1), key='cohesion')],
-            [Sg.Input(default_text=15, size=(5, 1), key='beta')],
-            [Sg.Input(default_text=0.4, size=(5, 1), key='Ka')],
-            [Sg.Input(default_text=2.9, size=(5, 1), key='Kp')],
-            [Sg.Input(default_text=1.5, size=(5, 1), key='H')],
-            [Sg.Input(default_text=450, size=(5, 1), key='Dia')],
-            [Sg.Input(default_text=2.25, size=(5, 1), key='Spacing')],
-            [Sg.Input(default_text=5, size=(5, 1), key='surcharge')],
-
-            [Sg.Input(default_text=400, size=(5, 1), key='SleeperH')],
-            [Sg.Input(default_text=0, size=(5, 1), key='Water_table')]
-        ]), Sg.Column([
-            [Sg.Text()],
-            [Sg.Text('Degrees')],
-            [Sg.Text('KN/m3')],
-            [Sg.Text('KPa')],
-            [Sg.Text('Degrees')],
-            [Sg.Checkbox(default=True, text='Override', key='Ka_over')],
-            [Sg.Checkbox(default=True, text='Override', key='Kp_over')],
-
-            [Sg.Text('m')],
-            [Sg.Text('mm')],
-            [Sg.Text('mm')],
-            [Sg.Text('KPa')],
-
-            [Sg.Text('mm')],
-            [Sg.Text('m')],
-
-        ]), Sg.Column(
-            blank(5) + [[Sg.Text(key='Ka1')], [Sg.Text(key='Kp1')]] + blank(5) + [
-                [Sg.Checkbox(default=True, text='Water Table', key='Water')]]
-        )
-
-        ],
-        [Sg.Text('Results:')],
-        [Sg.Column([
-            [Sg.Text('d:')],
-            [Sg.Text('D:')],
-            [Sg.Text('Total Embedment, E:')],
-            [Sg.Text('Soil Force, Pa:')],
-            [Sg.Text('Surcharge Force, Pw:')],
-            [Sg.Text('Max Moment:')],
-            [Sg.Text('Effective pile width factor:')],
-
-            [Sg.Text('Max moment on sleeper:')],
-            [Sg.Text('Max shear on sleeper:')]
-        ]), Sg.Column([
-            [Sg.Text(key='d')],
-            [Sg.Text(key='D')],
-            [Sg.Text(key='E')],
-            [Sg.Text(key='Pa')],
-            [Sg.Text(key='Pw')],
-            [Sg.Text(key='Mmax')],
-            [Sg.Text(key='f')],
-
-            [Sg.Text(key='M')],
-            [Sg.Text(key='V')]
-        ]), Sg.Column([
-            [Sg.Text('m')],
-            [Sg.Text('m')],
-            [Sg.Text('m')],
-            [Sg.Text('KN')],
-            [Sg.Text('KN')],
-            [Sg.Text('KNm')],
-            [Sg.Text()],
-
-            [Sg.Text('KNm')],
-            [Sg.Text('KN')]
-        ])],
-        [Sg.Text()],
-        [Sg.Button('Calculate', key='Calculate'), Sg.Button('Back', key='back')],
-        [Sg.Button('Print calculations', key='print_calcs')],
-        [Sg.Text('Type Job Name:'), Sg.Input(default_text='Soldier Pile', key='job_name')],
-        [Sg.Text('Choose destination:'),
-         Sg.Input(key='print_location', default_text=r'C:\Users\tduffett\PycharmProjects\pythonProject1'),
-         Sg.FolderBrowse()],
-        [Sg.Button('Back', key='back')],
-    ]
-
-    window = Sg.Window('Soldier Pile Retaining wall', layout)
-
-    while True:
-        event, values = window.read()
-        if event == Sg.WIN_CLOSED:
-            break
-        elif event == 'Calculate':
-            for i in values:
-                if isfloat(values[i]) == True:
-                    values[i] = float(values[i])
-            if values['Ka_over'] == False:
-                values['Ka'] = (math.cos(values['beta'] / 180 * math.pi) - math.sqrt(
-                    math.cos(values['beta'] / 180 * math.pi) ** 2 - math.cos(
-                        values['Friction_angle'] / 180 * math.pi) ** 2)) / (
-                                       math.cos(values['beta'] / 180 * math.pi) + math.sqrt(
-                                   math.cos(values['beta'] / 180 * math.pi) ** 2 - math.cos(
-                                       values['Friction_angle'] / 180 * math.pi) ** 2))
-                window['Ka1'].update(str(round(values['Ka'], 2)))
-            if values['Kp_over'] == False:
-                values['Kp'] = math.tan((45 + values['Friction_angle'] / 2) / 180 * math.pi) ** 2
-                window['Kp1'].update(str(round(values['Kp'], 2)))
-            Result = Retaining_wall_script.Soldier(values)
-            for i in Result:
-                window[i].update(str(round(Result[i], 3)))
-
 
 def soldier_pile():
     layout = [
@@ -359,34 +199,6 @@ def soldier_pile():
             for i in Result:
                 window[i].update(str(round(Result[i], 3)))
     return
-
-
-def pad_footing_write(values):
-    with open('Pf.txt', 'w', newline='') as csv_file:
-        data = [
-
-        ]
-
-        writer = csv.writer(csv_file)
-        writer.writerows(data)
-
-
-def pad_footing_read():
-    Pf = {}
-    with open('Pf.txt') as csv_file:
-        csv_reader = csv.reader(csv_file, delimiter=',')
-        for row in csv_reader:
-            print(row)
-            if row[0] == 'H':
-                Pf['H'] = round(float(row[1]))
-    return Pf
-
-
-def blank(n):
-    layout = [[]]
-    for i in range(n):
-        layout += [[Sg.Text('')]]
-    return layout
 
 
 def retaining_wall():
@@ -705,22 +517,6 @@ def retaining_wall():
             menu(variables)
 
 
-def wind():
-    layout = [
-        [Sg.Text('Base wind pressure calculator')],
-        [Sg.Text('Input')],
-        [Sg.Button('Back', key='back')]
-    ]
-    window = Sg.Window('wind Calcualtor', layout)
-
-    while True:
-        event, values = window.read()
-        if event == Sg.WIN_CLOSED:
-            break
-        elif event == 'back':
-            window.close()
-            menu(variables)
-
 def Concrete_Beam(concrete_beam):
     layout1 = Concrete.concrete_beam_layout(concrete_beam)
     window = Sg.Window('Concrete Beam', layout1)
@@ -742,24 +538,18 @@ def Concrete_Beam(concrete_beam):
                 Ast[x] = float(values['Ast' + str(x + 1)])
                 fy[x] = float(values['fy' + str(x + 1)])
             print(y, 'main x')
-            try:
-                depth = int(values['depth'])
-            except:
-                depth = int(values['breadth'])
+            depth = int(values['depth'])
             result = Concrete.beam_moment(int(values['breadth']), depth, int(values['cover']), y, Ast,
                                           float(values['Moment']), float(values['Shear']), float(values['Axial']),
                                           values['stirrups'], float(values['fc']), fy, values['Shape'])
-            for x in range(concrete_beam['number of rows of reinforcement']):
-                y[x] = float(values['y' + str(x + 1)])
-                Ast[x] = float(values['Ast' + str(x + 1)])
-            print(y, 'main y')
+
             result1 = Concrete.beam_shear(int(values['breadth']), depth, int(values['cover']), y, Ast,
                                           float(values['Moment']), float(values['Shear']), float(values['Axial']),
                                           values['stirrups'], float(values['fc']), fy, values['Shape'])
             result2 = Concrete.service_moments(int(values['breadth']), depth, int(values['cover']), y, Ast,
                                                float(values['Moment']), float(values['Shear']), float(values['Axial']),
                                                values['stirrups'], float(values['fc']), fy, values)
-            window['M'].update(str(round(result['Mn'] * 0.65, 2)) + '   KNm')
+            window['M'].update(str(round(result['M'] * 0.65, 2)) + '   KNm')
             window['Vuc'].update(str(round(result1['Vuc'] / 1000 * 0.6, 2)) + '   KN')
             window['Vus'].update(str(round(result1['Vus'] / 1000 * 0.6, 2)) + '   KN')
             window['Vu'].update(str(round((result1['Vus'] + result1['Vuc']) / 1000 * 0.6, 2)) + '   KN')
@@ -775,7 +565,7 @@ def Concrete_Beam(concrete_beam):
                 window['Failure_mode'].update(result['Failure mode'], text_color='green')
             else:
                 window['Failure_mode'].update(result['Failure mode'], text_color='red')
-            if float(values['Moment']) < result['Mn'] * 0.65 and result['Mn'] > result['Mu_min']:
+            if float(values['Moment']) < result['M'] * 0.65 and result['M'] > result['Mu_min']:
                 window['M_check'].update('OK', text_color='green')
             else:
                 window['M_check'].update('NG', text_color='red')
@@ -1055,22 +845,10 @@ def development():
         if event == Sg.WIN_CLOSED:
             break
         elif event == 'calculate':
-            bar_properties = {}
-            bar_properties['fsy'] = values['fsy']
-            bar_properties['fc'] = values['fc']
-            bar_properties['k1'] = values['k1']
-            bar_properties['db'] = values['db']
-            bar_properties['cd'] = values['cd']
-            development_length = bc.Development_length(bar_properties)
+            development_length = bc.Development_length({i: values[i] for i in ['fsy','fc','k1','db','cd']})
             window['result'].update(str(development_length) + ' mm')
         elif event == 'calc2':
-            bar_properties = {}
-            bar_properties['fsy'] = values['fsy']
-            bar_properties['fc'] = values['fc']
-            bar_properties['k1'] = values['k1']
-            bar_properties['db'] = values['db']
-            bar_properties['cd'] = values['cd']
-            development_length = bc.Development_length(bar_properties)
+            development_length = bc.Development_length({i: values[i] for i in ['fsy','fc','k1','db','cd']})
             window['result'].update(str(development_length) + ' mm')
             window['result1'].update(
                 str(min(round(int(values['L']) / development_length * int(values['fsy'])), int(values['fsy']))) +
@@ -1083,19 +861,8 @@ def development():
             menu(variables)
     window.close()
 
-
-steel = 1
-
-
-def draw_figure(canvas, figure):
-    figure_canvas_agg = FigureCanvasTkAgg(figure, canvas)
-    figure_canvas_agg.draw()
-    figure_canvas_agg.get_tk_widget().pack(side='top', fill='both', expand=1)
-    return figure_canvas_agg
-
-
 concrete_beam = variable('concrete_beam')
-variables = {'concrete': concrete_beam, 'steel': steel}
+variables = {'concrete': concrete_beam, 'steel': 1}
 
 if __name__ == "__main__":
     menu(variables)
