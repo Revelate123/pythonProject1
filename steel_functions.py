@@ -8,9 +8,85 @@ from pylatex import Document, PageStyle, Head, MiniPage, Foot, LargeText, \
     MediumText, LineBreak, simple_page_number, StandAloneGraphic, LongTabu, NewPage
 from pylatex.utils import italic, NoEscape, bold
 import subprocess
-import os
+import PySimpleGUI as Sg
 wb = load_workbook(filename='Steel Design Calculator.xlsx')
 #The first function will return data about the section selected.
+
+
+def calculate(values):
+    section = section_properties(values['SectionType'], values['SectionSize'], 0, 0, 0)
+    compact(section, values['SectionType'], float(values['segment length']), float(values['alpha_m']),
+               values['restraint'],
+               values['load_height_position'],
+               values['longitudinal_position'], values['ends_with_restraint'])
+    shear(section, values['SectionType'])
+    shear_moment(section, 0)
+    axial_compression(section, values['SectionType'], float(values['segment length']))
+    return section
+
+
+def steel_gui(SectionSize):
+    SectionType = ['Universal_Beam', 'Universal_Column', 'PFC', 'RHS', 'SHS', 'CHS', 'T-section']
+    layout = [
+        [Sg.Column([
+            [Sg.Text("Steel calculator", key='title')],
+            [Sg.Text('This calculator is not finished yet', key='t1')],
+            [Sg.Text('Available section types are Universal Columns, Universal Beams, and PFC\'s and RHS')],
+            [Sg.Text('Choose Section Type:')],
+            [Sg.Combo(SectionType, key='SectionType', enable_events=True, default_value=SectionType[0], size=(30, 1))],
+            [Sg.Text('Choose Section Size:')],
+            [Sg.Combo(SectionSize, key='SectionSize', default_value=SectionSize[0], size=(30, 1))],
+            [Sg.Text('Input Total Length in metres below:', key='t2')],
+            [Sg.Input(key='Length', size=(5, 1), default_text='1')],
+            [Sg.Text('Input segment Length in metres below:')],
+            [Sg.Input(default_text='1', key='segment length', size=(5, 1))],
+            [Sg.Text('Input alpha m below:', key='t3')],
+            [Sg.Input(key='alpha_m', size=(5, 1), default_text='1')],
+            [Sg.Combo(['FF', 'FP', 'FL', 'PP', 'PL', 'LL', 'FU', 'PU'], key='restraint', default_value='FP',
+                      enable_events=True)],
+            [Sg.Combo(['Shear centre', 'Top flange'], key='load_height_position', default_value='Shear centre',
+                      size=(15, 1))],
+            [Sg.Combo(['Within segment', 'At segment end'], key='longitudinal_position', default_value='Within segment',
+                      size=(15, 1)), Sg.Text('Load height')],
+            [Sg.Combo(['Any', 'None', 'One', 'Both'], key='ends_with_restraint', default_value='One'),
+             Sg.Text('Ends with Lateral restraint')],
+            [Sg.Button('Calculate', key='calculate', use_ttk_buttons=True)],
+            [Sg.Button('Back', key='back'), Sg.Button('quit', key='b2', use_ttk_buttons=True)],
+            [Sg.Column([
+                [Sg.Text('\u03A6Msx = '), Sg.Text('', key='PhiMsx')],
+                [Sg.Text('\u03A6Mbx = '), Sg.Text('', key='PhiMbx')],
+                [Sg.Text('\u03A6Msy = '), Sg.Text('', key='PhiMsy')],
+                [Sg.Text('\u03A6Mby = '), Sg.Text('', key='PhiMby')]
+            ]), Sg.Column([
+                [Sg.Text('\u03A6Nsx = '), Sg.Text('', key='PhiNsx')],
+                [Sg.Text('\u03A6Ncx = '), Sg.Text('', key='PhiNcx')],
+                [Sg.Text('\u03A6Nsy = '), Sg.Text(key='PhiNsy')],
+                [Sg.Text('\u03A6Ncy = '), Sg.Text(key='PhiNcy')]
+
+            ]), Sg.Column([
+                [Sg.Text('\u03A6Vu = '), Sg.Text('', key='PhiVu')],
+                [Sg.Text('\u03A6Vvm = '), Sg.Text('', key='PhiVvm')]
+            ])],
+        ])
+        ]]
+
+    return layout
+
+
+def steel_data(string,wb):
+    SectionSize = []
+    for j in wb[string]:
+        SectionSize.append(j[0].value)
+    SectionSize = list(filter(lambda item: item is not None, SectionSize))
+    for j1 in range(4):
+        SectionSize.pop(0)
+    # wb.close()
+    return SectionSize
+def import_steel_data():
+    wb = load_workbook(filename='Steel Design Calculator.xlsx')
+    # SectionType = wb.sheetnames
+    return wb
+
 def section_properties(SectionType, SectionSize, b,d,t):
     data = ['d', 'bf', 'tf', 'tw', 'Ix', 'Zx', 'Sx', 'rx', 'Iy', 'Iw', 'J','Zy','Sy','fyf','fyw','kf','Ag','ry']
     matrix = {}
