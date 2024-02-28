@@ -10,25 +10,220 @@
 import math
 import Concrete
 import sympy
+import PySimpleGUI as Sg
+from resources import key_check, variable_write, isfloat, variable, blank
 
-# Edge pads
-M_sls = [88, 49]  # in KNm
-N_sls = [35, 29]  # in KN
-V_sls = [21.5, 7]  # in KN
-M_uls = [125, 18.5, 76]  # in KNm
-N_uls = [30, -5, 32]  # in KN
-V_uls = [28, 2, 12]  # in KN
+def retaining_wall_layout():
+    # retaining_wall = Retaining_wall_read()
+    Retaining_wall = variable('retaining_wall')
+    list1 = ['Unrestrained', 'Minor', 'Moderate', 'Strong']
+    if Retaining_wall['Masonry'] == 'False':
+        Retaining_wall['Masonry'] = False
+    layout = [
+        [Sg.Column([
+            [Sg.Text('Retaining Wall Calculator')],
+            [Sg.Text('Pure Cantilever'),
+             Sg.Checkbox('Masonry wall', key='Masonry', enable_events=True, default=Retaining_wall['Masonry'])],
+            [Sg.Text('Dimensions:')],
+            [Sg.Text('Wall Height, H:       ')],
+            [Sg.Text('Footing Depth, D:     ')],
+            [Sg.Text('Length of Toe, Ltoe:  ')],
+            [Sg.Text('Length of Heel, Lheel:')],
 
-SLS = {'M': M_sls, 'N': N_sls, 'V': V_sls}
+            [Sg.Text('Soil Properties:')],
+            [Sg.Text('Angle of internal friction, \u03A6')],
+            [Sg.Text('Soil cohesion, c\'                ')],
+            [Sg.Text('Density of soil, \u03B3')],
+            [Sg.Text('Allowable bearing capacity:')],
+            [Sg.Text('Passive Soil coefficient:')],
+            [Sg.Text('Active Soil coefficient:')],
+            [Sg.Text('Loads:')],
+            [Sg.Text('Surcharge')],
+            [Sg.Text('Additional Moment')],
+            [Sg.Text('Additional Load ontop of Wall')],
+            [Sg.Checkbox('Restrained at Top', default=key_check(Retaining_wall, 'Top_restraint'), key='Top_restraint',
+                         enable_events=True)],
+            [Sg.Text('Results:')],
+            [Sg.Text('Bearing Pressure (SLS):')],
+            [Sg.Text('Overturning (ULS):')],
+            [Sg.Text('Sliding:')],
+            [Sg.Text('Wall vertical steel:')],
+            [Sg.Text('Wall horizontal steel:')],
+            [Sg.Text('Toe reinforcement:')],
+            [Sg.Text('Toe shrinkage steel:')],
+            [Sg.Text('Heel reinforcement:')],
+            [Sg.Text('Heel shrinkage steel:')]
+        ]), Sg.Column([
+            [Sg.Text('')],
+            [Sg.Text('')],
+            [Sg.Text('')],
+            [Sg.Input(default_text=key_check(Retaining_wall, 'H'), size=(5, 1), key='H', enable_events=True)],
+            [Sg.Input(default_text=key_check(Retaining_wall, 'D'), size=(5, 1), key='D', enable_events=True)],
+            [Sg.Input(default_text=key_check(Retaining_wall, 'Ltoe'), size=(5, 1), key='Ltoe', enable_events=True)],
+            [Sg.Input(default_text=key_check(Retaining_wall, 'Lheel'), size=(5, 1), key='Lheel', enable_events=True)],
+            [Sg.Text('')],
+            [Sg.Input(default_text=key_check(Retaining_wall, 'Internal_friction'), size=(5, 1), key='Internal_friction',
+                      enable_events=True)],
+            [Sg.Input(default_text=key_check(Retaining_wall, 'c'), size=(5, 1), key='c', enable_events=True)],
+            [Sg.Input(default_text=key_check(Retaining_wall, 'Soil_density'), size=(5, 1), key='Soil_density',
+                      enable_events=True)],
+            [Sg.Input(default_text=key_check(Retaining_wall, 'Allowable_bearing'), size=(5, 1), key='Allowable_bearing',
+                      enable_events=True)],
+            [Sg.Input(default_text=key_check(Retaining_wall, 'Kp'), size=(5, 1), key='Kp', enable_events=True)],
+            [Sg.Input(default_text=key_check(Retaining_wall, 'Ka'), size=(5, 1), key='Ka', enable_events=True)],
+            [Sg.Text('')],
+            [Sg.Input(default_text=key_check(Retaining_wall, 'Surcharge'), size=(5, 1), key='Surcharge',
+                      enable_events=True)],
+            [Sg.Input(default_text=key_check(Retaining_wall, 'Additional_moment'), size=(5, 1), key='Additional_moment',
+                      enable_events=True)],
+            [Sg.Input(default_text=key_check(Retaining_wall, 'Additional_load'), size=(5, 1), key='Additional_load',
+                      enable_events=True)],
+            [Sg.Input(default_text=key_check(Retaining_wall, 'Restraint_height'), size=(5, 1), key='Restraint_height',
+                      enable_events=True)],
+            [Sg.Text('')],
 
-ULS = {'M': M_uls, 'N': N_uls, 'V': V_uls}
-Dimensions = {'D': 0.6, 'W': 1}  # in metres
-allowable_end_pressure = 150  # in KPa
-density_concrete = 25  # in KN/m3
-overburden = 0.2 * 18  # KPa from soil above (depth x unit weight)
-Friction_angle = 24  # in degrees
-cohesion = 5  # in KPa
+            [Sg.Text('', key='bearing_check')],
+            [Sg.Text('', key='overturning_check')],
+            [Sg.Text('', key='sliding_check')],
+            [Sg.Text('', key='wall_vertical_steel')],
+            [Sg.Text('', key='wall_horizontal_steel')],
+            [Sg.Text('', key='toe_horizontal_steel')],
+            [Sg.Text('', key='toe_OoP')],
+            [Sg.Text('', key='heel_horizontal_steel')],
+            [Sg.Text('', key='heel_OoP')]
+        ]), Sg.Column([
+            [Sg.Text('')],
+            [Sg.Text('')],
+            [Sg.Text('')],
+            [Sg.Text('mm')],
+            [Sg.Text('mm')],
+            [Sg.Text('mm')],
+            [Sg.Text('mm')],
+            [Sg.Text('')],
+            [Sg.Text('Degrees')],
+            [Sg.Text('KPa')],
+            [Sg.Text('KN/m3')],
+            [Sg.Text('KPa')],
+            [Sg.Checkbox(text='Override', key='Kp_over')],
+            [Sg.Checkbox(text='Override', key='Ka_over')],
+            [Sg.Text('')],
+            [Sg.Text('KPa')],
+            [Sg.Text('KNm')],
+            [Sg.Text('KN')],
+            [Sg.Text('Restraint Height mm')],
+            [Sg.Text('')],
+            [Sg.Text('KPa')],
+            [Sg.Text('KNm')],
+            [Sg.Text('KN')],
+            [Sg.Text('mm2/m')],
+            [Sg.Text('mm2/m')],
+            [Sg.Text('mm2/m')],
+            [Sg.Text('mm2/m')],
+            [Sg.Text('mm2/m')],
+            [Sg.Text('mm2/m')],
+        ]), Sg.Column(blank(12) + [
+            [Sg.Text(key='Kp1')],
+            [Sg.Text(key='Ka1')]
+        ] + blank(6) + [
 
+                          [Sg.Text('OK/NG', key='bearing_OK/NG')],
+                          [Sg.Text('OK/NG', key='overturning_OK/NG')],
+                          [Sg.Text('OK/NG', key='sliding_OK/NG')],
+                          [Sg.Text('minimum')],
+                          [Sg.Text('minimum')],
+                          [Sg.Text('')],
+                          [Sg.Text('')],
+                          [Sg.Text('')],
+                          [Sg.Text('')]
+                      ]), Sg.Column(blank(2) + [
+            [Sg.Text('Wall thickness, tw:')],
+            [Sg.Text('Shear Key Depth:')],
+            [Sg.Text('Shear Key Width:')],
+            [Sg.Text('Shear Key Distance from Toe:')],
+            [Sg.Text('Angle of Backfill soil:')],
+            [Sg.Text('Overburden Soil:')]
+        ] + blank(1) + [
+                                        [Sg.Text('Concrete Properties')],
+                                        [Sg.Text('f\'c')],
+                                        [Sg.Text('Concrete Density')],
+                                        [Sg.Text('Wall cover')],
+                                        [Sg.Text('Footing cover:')],
+                                        [Sg.Text('Degree of Crack control')],
+                                        [Sg.Text('')],
+                                        [Sg.Text('Masonry Properties')],
+                                        [Sg.Text('fuc')],
+                                        [Sg.Text('Bedding thickness:')],
+                                        [Sg.Text('Masonry Block Size:')],
+                                        [Sg.Text('Masonry Material:')],
+                                        [Sg.Text('Depth from extreme comp. to steel, d:')]
+
+                                    ] + blank(7)), Sg.Column(blank(2) + [
+            [Sg.Input(default_text=key_check(Retaining_wall, 'tw'), size=(5, 1), key='tw', enable_events=True)],
+            [Sg.Input(default_text=key_check(Retaining_wall, 'SD'), size=(5, 1), key='SD', enable_events=True)],
+            [Sg.Input(default_text=key_check(Retaining_wall, 'SW'), size=(5, 1), key='SW', enable_events=True)],
+            [Sg.Input(default_text=key_check(Retaining_wall, 'SKD'), size=(5, 1), key='SKD', enable_events=True)],
+            [Sg.Input(default_text=key_check(Retaining_wall, 'beta'), size=(5, 1), key='beta', enable_events=True)],
+            [Sg.Input(default_text=key_check(Retaining_wall, 'Overburden'), size=(5, 1), key='Overburden',
+                      enable_events=True)]
+        ] + blank(2) + [
+
+                                                                 [Sg.Input(default_text=key_check(Retaining_wall, 'fc'),
+                                                                           size=(5, 1), key='fc', enable_events=True)],
+                                                                 [Sg.Input(default_text=key_check(Retaining_wall, 'DC'),
+                                                                           size=(5, 1), key='DC', enable_events=True)],
+                                                                 [Sg.Input(default_text=key_check(Retaining_wall,
+                                                                                                  'wall_cover'),
+                                                                           size=(5, 1), key='wall_cover',
+                                                                           enable_events=True)],
+                                                                 [Sg.Input(default_text=key_check(Retaining_wall,
+                                                                                                  'footing_cover'),
+                                                                           size=(5, 1), key='footing_cover',
+                                                                           enable_events=True)],
+                                                                 [Sg.Combo(list1, default_value=list1[0],
+                                                                           size=(12, 1), key='crack',
+                                                                           enable_events=True)],
+                                                                 [Sg.Text('')],
+                                                                 [Sg.Text('')],
+                                                                 [Sg.Input(
+                                                                     default_text=key_check(Retaining_wall, 'fuc'),
+                                                                     size=(5, 1), key='fuc', enable_events=True)],
+                                                                 [Sg.Input(default_text=key_check(Retaining_wall, 'BT'),
+                                                                           size=(5, 1), key='BT', enable_events=True)],
+                                                                 [Sg.Combo(['10 series', '15 series', '20 series',
+                                                                            '25 series', '30 series'],
+                                                                           default_value='20 series',
+                                                                           size=(12, 1), key='Masonry_size',
+                                                                           enable_events=True)],
+                                                                 [Sg.Combo(['Clay', 'Concrete'], default_value='Clay',
+                                                                           size=(12, 1), key='Masonry_type',
+                                                                           enable_events=True)],
+                                                                 [Sg.Input(default_text=120, size=(5, 1), key='d',
+                                                                           enable_events=True)]
+                                                             ] + blank(7)), Sg.Column(blank(2) + [
+            [Sg.Text('mm')],
+            [Sg.Text('mm')],
+            [Sg.Text('mm')],
+            [Sg.Text('mm')],
+            [Sg.Text('Degrees')],
+            [Sg.Text('mm')]
+
+        ] + blank(2) + [
+                                                                                          [Sg.Text('MPa')],
+                                                                                          [Sg.Text('KN/m3')],
+                                                                                          [Sg.Text('mm')],
+                                                                                          [Sg.Text('mm')]
+                                                                                      ] + blank(14)),
+            Sg.Column(blank(27))],
+        [Sg.Button('Calculate', key='Calculate'), Sg.Button('Back', key='back')],
+        [Sg.Button('Print calculations', key='print_calcs')],
+        [Sg.Text('Type Job Name:'), Sg.Input(default_text='Retaining Walls', key='job_name')],
+        [Sg.Text('Choose destination:'),
+         Sg.Input(key='print_location', default_text=r'C:\Users\tduffett\PycharmProjects\pythonProject1'),
+         Sg.FolderBrowse()],
+        [Sg.Button('Back', key='back')],
+
+    ]
+    return layout
 
 def bearing(Dimensions, allowable_end_pressure, density_concrete, density_soil, surcharge, Additional_moment, Ka,
             Internal_friction, c, Kp, values, Top_restraint, Restraint_height):
@@ -66,31 +261,19 @@ def bearing(Dimensions, allowable_end_pressure, density_concrete, density_soil, 
     a = 3 * (centroid_N * 10 ** -3 - x)
 
     if a < (Dimensions['Ltoe'] + Dimensions['Lheel']) * 10 ** -3 and x < centroid_N * 10 ** -3:
-
         qmax = 2 * N / a
-
     elif a > (Dimensions['Ltoe'] + Dimensions['Lheel']) * 10 ** -3:
-
         M = -N * (centroid_N - Dimensions['Ltoe'] / 2 - Dimensions['Lheel'] / 2) * 10 ** -3 \
             + Moment
-
         qmax = N / ((Dimensions['Ltoe'] + Dimensions['Lheel']) * 10 ** -3) + 6 * M / (
                 (Dimensions['Ltoe'] + Dimensions['Lheel']) * 10 ** -3) ** 2
-
         a = (Dimensions['Ltoe'] + Dimensions['Lheel']) * 10 ** -3
-
     elif x > centroid_N * 10 ** -3:
         qmax = 'INCREASE LENGTH'
-
     Moment = 1.25 * PA1 * (Dimensions['H'] + Dimensions['D'] + Dimensions['h']) / 3 * 10 ** -3 + 1.5 * PA2 * (
             Dimensions['H'] + Dimensions['D'] + Dimensions['h']) / 2 * 10 ** -3 + Additional_moment
-    print(Moment, 'Moment_U')
-
-    print(qmax, 'qmax', a, N)
-
     x_ULS = Moment / N
     a_ULS = 3 * (centroid_N * 10 ** -3 - x_ULS)
-
     if a_ULS < (Dimensions['Ltoe'] + Dimensions['Lheel']) * 10 ** -3 and x_ULS < centroid_N * 10 ** -3:
         qmax_ULS = 2 * N / a_ULS
     elif a_ULS > (Dimensions['Ltoe'] + Dimensions['Lheel']) * 10 ** -3:
@@ -109,7 +292,7 @@ def bearing(Dimensions, allowable_end_pressure, density_concrete, density_soil, 
         0.75 * Internal_friction / 180 * math.pi) + c * a_ULS) - 1.25 * PA1 - 1.5 * PA2 + 0.9 * 0.5 * Kp * (
                 Dimensions['D'] + Dimensions['SD'] + values['Overburden']) ** 2 * density_soil * 10 ** -6
     results = {'qmax': qmax, 'F': F, 'a_ULS': a_ULS, 'qmax_ULS': qmax_ULS, 'PA1': PA1, 'PA2': PA2, 'N': N,
-               'N_centroid': centroid_N, 'a': a, 'qmax': qmax}
+               'N_centroid': centroid_N, 'a': a}
     return results
 
 
@@ -117,27 +300,8 @@ def overturning(Dimensions, allowable_end_pressure, density_concrete, density_so
                 values, Top_restraint, Restraint_height):
     PA1 = 0.5 * Ka * density_soil * (Dimensions['H'] + Dimensions['D'] + Dimensions['h']) ** 2 * 10 ** -6
     PA2 = Ka * surcharge * (Dimensions['H'] + Dimensions['D'] + Dimensions['h']) * 10 ** -3
-
-    if Top_restraint == True:
-        M_unrestrained = PA1 * (Dimensions['H'] + Dimensions['D'] + Dimensions['h']) / 3 * 10 ** -3 + PA2 * (
-                Dimensions['H'] + Dimensions['D'] + Dimensions['h']) / 2 * 10 ** -3 + Additional_moment
-        x1 = (Dimensions['H'] * 10 ** -3) / (2 ** 0.25)
-        thetaB = (Restraint_height / Dimensions['H']) * (Dimensions['H'] * 10 ** -3 - x1) * (
-                1.25 * Ka * density_soil * Dimensions['H'] * 10 ** -3) * (Dimensions['H'] * 10 ** -3) ** 3 / 24
-        thetaA = (Restraint_height * 10 ** -3) ** 3 / 3
-        thetaB2 = 1.5 * Ka * surcharge * (Dimensions['H'] * 10 ** -3) ** 4 / 8 * Restraint_height / (Dimensions['H'])
-        M_restrained = (1.25 * Ka * density_soil * Dimensions['H'] * 10 ** -3) * (Dimensions[
-                                                                                      'H'] * 10 ** -3) ** 2 / 6 - thetaB / thetaA * Restraint_height * 10 ** -3 + 1.5 * Ka * surcharge * (
-                               Dimensions[
-                                   'H'] * 10 ** -3) ** 2 / 2 - thetaB2 / thetaA * Restraint_height * 10 ** -3 + Additional_moment
-
-        Moment = M_restrained
-        print(M_restrained, 'Moment_R', thetaB, thetaA, x1, thetaB2)
-    else:
-        Moment = 1.25 * PA1 * (Dimensions['H'] + Dimensions['D'] + Dimensions['h']) / 3 * 10 ** -3 + 1.5 * PA2 * (
-                Dimensions['H'] + Dimensions['D'] + Dimensions['h']) / 2 * 10 ** -3 + Additional_moment
-        print(Moment, 'Moment_U')
-
+    Moment = 1.25 * PA1 * (Dimensions['H'] + Dimensions['D'] + Dimensions['h']) / 3 * 10 ** -3 + 1.5 * PA2 * (
+            Dimensions['H'] + Dimensions['D'] + Dimensions['h']) / 2 * 10 ** -3 + Additional_moment
     M = (density_concrete * Dimensions['H'] * Dimensions['tw'] * (Dimensions['Ltoe'] - Dimensions['tw'] / 2) * 10 ** -9 \
          + (Dimensions['Ltoe'] + Dimensions['Lheel']) * Dimensions['D'] * density_concrete * ( \
                      Dimensions['Ltoe'] + Dimensions['Lheel']) / 2 * 10 ** -9 \
@@ -149,10 +313,6 @@ def overturning(Dimensions, allowable_end_pressure, density_concrete, density_so
          + Dimensions['Lheel'] * Dimensions['h'] * 0.5 * density_soil * (
                  Dimensions['Ltoe'] + Dimensions['Lheel'] * 2 / 3) * 10 ** -9) * 0.9 \
         - Moment
-    # - PA1 * (Dimensions['H'] + Dimensions['D'] + Dimensions['h']) / 3 * 10 ** -3 * 1.25\
-    # - PA2 * (Dimensions['H'] + Dimensions['D'] + Dimensions['h']) / 2 * 10 ** -3 * 1.5\
-    # - Additional_moment
-    print(M, 'M', PA1, PA2, Dimensions['h'])
     return M
 
 
@@ -199,9 +359,9 @@ def concrete_heel(Dimensions, allowable_end_pressure, density_concrete, density_
     pmin = 0.2 * (Dimensions['D'] / d) ** 2 * (0.6 * math.sqrt(fc) / 500)
     p = max(p, pmin)
 
-    results = {'Mn': 0, 'Mu_min': 0}
+    results = {'M': 0, 'Mu_min': 0}
     Ast = [p * 1000 * d]
-    while results['Mn'] * 0.65 < M or results['Mu_min'] > results['Mn']:
+    while results['M'] * 0.65 < M or results['Mu_min'] > results['M']:
         results = Concrete.beam_moment(1000, Dimensions['D'], Dimensions['footing_cover'],
                                        [Dimensions['D'] - Dimensions['footing_cover']], Ast, M, 0, 0, [0, 0, 0], fc,
                                        [500], 'Rectangle')
@@ -235,9 +395,9 @@ def concrete_toe(Dimensions, density_soil, surcharge, Additional_moment, Ka, Int
     pmin = 0.2 * (Dimensions['D'] / d) ** 2 * (0.6 * math.sqrt(fc) / 500)
     p = max(p, pmin)
 
-    results = {'Mn': 0, 'Mu_min': 0}
+    results = {'M': 0, 'Mu_min': 0}
     Ast = [p * 1000 * d]
-    while results['Mn'] * 0.65 < M or results['Mu_min'] > results['Mn']:
+    while results['M'] * 0.65 < M or results['Mu_min'] > results['M']:
         results = Concrete.beam_moment(1000, Dimensions['D'], Dimensions['footing_cover'],
                                        [Dimensions['D'] - Dimensions['footing_cover']], Ast, M, 0, 0, [0, 0, 0], fc,
                                        [500], 'Rectangle')
@@ -294,8 +454,6 @@ def masonry_wall(d, fsy, fuc, Masonry, Dimensions, Ka, surcharge, density_soil, 
     Ast = 10
     b = 1000
     Md = 0
-    # d = Masonry['W']/2
-
     Area = (Masonry['W'] - 36 * 2) ** 3 * (Masonry['L'] - 36 * 3) / 12 * 10 ** -12
     y = Masonry['W'] / 2 * 10 ** -3
     Mcv = 0 * Area / y * 10 ** 3
@@ -358,9 +516,3 @@ def Soldier(values):
     M = P * values['Spacing'] ** 2 / 8
     V = P * values['Spacing'] / 2
     return {'Pa': Pa, 'Pw': Pw, 'd': d, 'D': D, 'E': E, 'Mmax': Mmax, 'f': f, 'M': M, 'V': V}
-
-
-x = 450
-values = {'Friction_angle': 26, 'Density_soil': 20, 'H': 1.5, 'surcharge': 5, 'Dia': x, 'Ka': 0.4, 'Kp': 2.9,
-          'Spacing': 5 * x / 1000, 'cohesion': 0, 'bf': 150, 'fc': 20, 'SleeperH': 0.4, 'Water': True, 'Water_table': 0}
-# Soldier(values)

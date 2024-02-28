@@ -1,6 +1,38 @@
 #This module will perform checks on bolts
 import math
+import PySimpleGUI as Sg
 #This function will calculate loads to each bolt given their position and overall loadings
+
+def development_layout():
+    right = [
+        [Sg.Text('fsy characteristic yield strength of reinforcement, determined in accordance with Clause 3.2.1')],
+        [Sg.Text('f \'c characteristic compressive (cylinder) strength of concrete at 28 days')],
+        [Sg.Text('Bar diameter in mm')],
+        [Sg.Text(
+            'k1 a coefficient that accounts for the bond properties of the bonded reinforcement (see Clause 8.6.2.3)')],
+        [Sg.Text('cd a dimension (in mm) corresponding to the smaller of the concrete'
+                 ' cover to a bar developing stress and half the clear distance to the next'
+                 ' parallel bar developing stress, as shown in Figure 13.1.2.2')]
+    ]
+    left = [
+        [Sg.Input(size=(5, 2), key='fsy', default_text='400')],
+        [Sg.Input(size=(5, 1), key='fc', default_text='20')],
+        [Sg.Input(size=(5, 1), key='db', default_text='30')],
+        [Sg.Input(size=(5, 1), key='k1', default_text=1)],
+        [Sg.Input(size=(5, 3), key='cd', default_text='30')]
+    ]
+    layout2 = [
+        [Sg.Text('Enter properties')],
+        [Sg.Column(left, vertical_alignment='top'), Sg.VSeparator(), Sg.Column(right, vertical_alignment='top')],
+        [Sg.Button('Calculate', key='calculate')],
+        [Sg.Text('Minimum Development Length (AS3600:2018 Clause 13.1.2.2):')],
+        [Sg.Text('', key='result')],
+        [Sg.Text('Bar stress developed over length:'), Sg.Input(default_text='500', size=(5, 1), key='L'),
+         Sg.Button('Calculate', key='calc2')],
+        [Sg.Text('', key='result1')],
+        [Sg.Button('Back', key='back')]
+    ]
+    return layout2
 
 def bolt_actions(Bolts):
     #calculate bolt area
