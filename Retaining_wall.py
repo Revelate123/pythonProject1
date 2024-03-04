@@ -469,6 +469,109 @@ def masonry_wall(d, fsy, fuc, Masonry, Dimensions, Ka, surcharge, density_soil, 
     return results
 
 
+def soldier_layout():
+    layout = [
+        [Sg.Column([
+            [Sg.Text('Soil Parameters')],
+            [Sg.Text('Friction angle:')],
+            [Sg.Text('Density of soil:')],
+            [Sg.Text('Cohesion:')],
+            [Sg.Text('Angle of Backfill:')],
+            [Sg.Text('Ka')],
+            [Sg.Text('Kp')],
+            [Sg.Text('Retained Height')],
+            [Sg.Text('Pile Diameter')],
+            [Sg.Text('Pile spacing')],
+            [Sg.Text('Surcharge')],
+
+            [Sg.Text('Height of sleeper:')],
+            [Sg.Text('Depth to Water Table:')]
+
+        ]), Sg.Column([
+            [Sg.Text()],
+            [Sg.Input(default_text=26, size=(5, 1), key='Friction_angle')],
+            [Sg.Input(default_text=20, size=(5, 1), key='Density_soil')],
+            [Sg.Input(default_text=5, size=(5, 1), key='cohesion')],
+            [Sg.Input(default_text=15, size=(5, 1), key='beta')],
+            [Sg.Input(default_text=0.4, size=(5, 1), key='Ka')],
+            [Sg.Input(default_text=2.9, size=(5, 1), key='Kp')],
+            [Sg.Input(default_text=1.5, size=(5, 1), key='H')],
+            [Sg.Input(default_text=450, size=(5, 1), key='Dia')],
+            [Sg.Input(default_text=2.25, size=(5, 1), key='Spacing')],
+            [Sg.Input(default_text=5, size=(5, 1), key='surcharge')],
+
+            [Sg.Input(default_text=400, size=(5, 1), key='SleeperH')],
+            [Sg.Input(default_text=0, size=(5, 1), key='Water_table')]
+        ]), Sg.Column([
+            [Sg.Text()],
+            [Sg.Text('Degrees')],
+            [Sg.Text('KN/m3')],
+            [Sg.Text('KPa')],
+            [Sg.Text('Degrees')],
+            [Sg.Checkbox(default=True, text='Override', key='Ka_over')],
+            [Sg.Checkbox(default=True, text='Override', key='Kp_over')],
+
+            [Sg.Text('m')],
+            [Sg.Text('mm')],
+            [Sg.Text('mm')],
+            [Sg.Text('KPa')],
+
+            [Sg.Text('mm')],
+            [Sg.Text('m')],
+
+        ]), Sg.Column(
+            blank(5) + [[Sg.Text(key='Ka1')], [Sg.Text(key='Kp1')]] + blank(5) + [
+                [Sg.Checkbox(default=True, text='Water Table', key='Water')]]
+        )
+
+        ],
+        [Sg.Text('Results:')],
+        [Sg.Column([
+            [Sg.Text('d:')],
+            [Sg.Text('D:')],
+            [Sg.Text('Total Embedment, E:')],
+            [Sg.Text('Soil Force, Pa:')],
+            [Sg.Text('Surcharge Force, Pw:')],
+            [Sg.Text('Max Moment:')],
+            [Sg.Text('Effective pile width factor:')],
+
+            [Sg.Text('Max moment on sleeper:')],
+            [Sg.Text('Max shear on sleeper:')]
+        ]), Sg.Column([
+            [Sg.Text(key='d')],
+            [Sg.Text(key='D')],
+            [Sg.Text(key='E')],
+            [Sg.Text(key='Pa')],
+            [Sg.Text(key='Pw')],
+            [Sg.Text(key='Mmax')],
+            [Sg.Text(key='f')],
+
+            [Sg.Text(key='M')],
+            [Sg.Text(key='V')]
+        ]), Sg.Column([
+            [Sg.Text('m')],
+            [Sg.Text('m')],
+            [Sg.Text('m')],
+            [Sg.Text('KN')],
+            [Sg.Text('KN')],
+            [Sg.Text('KNm')],
+            [Sg.Text()],
+
+            [Sg.Text('KNm')],
+            [Sg.Text('KN')]
+        ])],
+        [Sg.Text()],
+        [Sg.Button('Calculate', key='Calculate'), Sg.Button('Back', key='back')],
+        [Sg.Button('Print calculations', key='print_calcs')],
+        [Sg.Text('Type Job Name:'), Sg.Input(default_text='Soldier Pile', key='job_name')],
+        [Sg.Text('Choose destination:'),
+         Sg.Input(key='print_location', default_text=r'C:\Users\tduffett\PycharmProjects\pythonProject1'),
+         Sg.FolderBrowse()],
+        [Sg.Button('Back', key='back')],
+    ]
+    return layout
+
+
 def Soldier(values):
     #Determine the effective pile width
     f = min(2.5, 0.08 * values['Friction_angle'])

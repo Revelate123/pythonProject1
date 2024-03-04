@@ -1,9 +1,3 @@
-# This is my steel calculator script
-
-# This section of code will create the graphical user interface (GUI)
-
-# load in steel functions which perform operations
-
 # Choose sectiontype and size
 import PySimpleGUI as Sg
 import steel_functions as st
@@ -74,108 +68,7 @@ def menu(variables):
     window1.close()
 
 def soldier_pile():
-    layout = [
-        [Sg.Column([
-            [Sg.Text('Soil Parameters')],
-            [Sg.Text('Friction angle:')],
-            [Sg.Text('Density of soil:')],
-            [Sg.Text('Cohesion:')],
-            [Sg.Text('Angle of Backfill:')],
-            [Sg.Text('Ka')],
-            [Sg.Text('Kp')],
-            [Sg.Text('Retained Height')],
-            [Sg.Text('Pile Diameter')],
-            [Sg.Text('Pile spacing')],
-            [Sg.Text('Surcharge')],
-
-            [Sg.Text('Height of sleeper:')],
-            [Sg.Text('Depth to Water Table:')]
-
-        ]), Sg.Column([
-            [Sg.Text()],
-            [Sg.Input(default_text=26, size=(5, 1), key='Friction_angle')],
-            [Sg.Input(default_text=20, size=(5, 1), key='Density_soil')],
-            [Sg.Input(default_text=5, size=(5, 1), key='cohesion')],
-            [Sg.Input(default_text=15, size=(5, 1), key='beta')],
-            [Sg.Input(default_text=0.4, size=(5, 1), key='Ka')],
-            [Sg.Input(default_text=2.9, size=(5, 1), key='Kp')],
-            [Sg.Input(default_text=1.5, size=(5, 1), key='H')],
-            [Sg.Input(default_text=450, size=(5, 1), key='Dia')],
-            [Sg.Input(default_text=2.25, size=(5, 1), key='Spacing')],
-            [Sg.Input(default_text=5, size=(5, 1), key='surcharge')],
-
-            [Sg.Input(default_text=400, size=(5, 1), key='SleeperH')],
-            [Sg.Input(default_text=0, size=(5, 1), key='Water_table')]
-        ]), Sg.Column([
-            [Sg.Text()],
-            [Sg.Text('Degrees')],
-            [Sg.Text('KN/m3')],
-            [Sg.Text('KPa')],
-            [Sg.Text('Degrees')],
-            [Sg.Checkbox(default=True, text='Override', key='Ka_over')],
-            [Sg.Checkbox(default=True, text='Override', key='Kp_over')],
-
-            [Sg.Text('m')],
-            [Sg.Text('mm')],
-            [Sg.Text('mm')],
-            [Sg.Text('KPa')],
-
-            [Sg.Text('mm')],
-            [Sg.Text('m')],
-
-        ]), Sg.Column(
-            blank(5) + [[Sg.Text(key='Ka1')], [Sg.Text(key='Kp1')]] + blank(5) + [
-                [Sg.Checkbox(default=True, text='Water Table', key='Water')]]
-        )
-
-        ],
-        [Sg.Text('Results:')],
-        [Sg.Column([
-            [Sg.Text('d:')],
-            [Sg.Text('D:')],
-            [Sg.Text('Total Embedment, E:')],
-            [Sg.Text('Soil Force, Pa:')],
-            [Sg.Text('Surcharge Force, Pw:')],
-            [Sg.Text('Max Moment:')],
-            [Sg.Text('Effective pile width factor:')],
-
-            [Sg.Text('Max moment on sleeper:')],
-            [Sg.Text('Max shear on sleeper:')]
-        ]), Sg.Column([
-            [Sg.Text(key='d')],
-            [Sg.Text(key='D')],
-            [Sg.Text(key='E')],
-            [Sg.Text(key='Pa')],
-            [Sg.Text(key='Pw')],
-            [Sg.Text(key='Mmax')],
-            [Sg.Text(key='f')],
-
-            [Sg.Text(key='M')],
-            [Sg.Text(key='V')]
-        ]), Sg.Column([
-            [Sg.Text('m')],
-            [Sg.Text('m')],
-            [Sg.Text('m')],
-            [Sg.Text('KN')],
-            [Sg.Text('KN')],
-            [Sg.Text('KNm')],
-            [Sg.Text()],
-
-            [Sg.Text('KNm')],
-            [Sg.Text('KN')]
-        ])],
-        [Sg.Text()],
-        [Sg.Button('Calculate', key='Calculate'), Sg.Button('Back', key='back')],
-        [Sg.Button('Print calculations', key='print_calcs')],
-        [Sg.Text('Type Job Name:'), Sg.Input(default_text='Soldier Pile', key='job_name')],
-        [Sg.Text('Choose destination:'),
-         Sg.Input(key='print_location', default_text=r'C:\Users\tduffett\PycharmProjects\pythonProject1'),
-         Sg.FolderBrowse()],
-        [Sg.Button('Back', key='back')],
-    ]
-
-    window = Sg.Window('Soldier Pile Retaining wall', layout)
-
+    window = Sg.Window('Soldier Pile Retaining wall', Retaining_wall_script.soldier_layout())
     while True:
         event, values = window.read()
         if event == Sg.WIN_CLOSED:
@@ -198,13 +91,11 @@ def soldier_pile():
             Result = Retaining_wall_script.Soldier(values)
             for i in Result:
                 window[i].update(str(round(Result[i], 3)))
-    return
 
 
 def retaining_wall():
     window = Sg.Window('Retaining Wall Calculator', Retaining_wall_script.retaining_wall_layout(), resizable=True).finalize()
     window.Maximize()
-
     while True:
         event, values = window.read()
         for i in values:
