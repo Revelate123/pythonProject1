@@ -441,8 +441,10 @@ def bolts():
                  Sg.Combo(['4.6/S'], default_value='4.6/S', key='grade')],
                 [Sg.Column(left_column, vertical_alignment='top'), Sg.VSeparator(),
                  Sg.Column(right_column, vertical_alignment='top')],
-                [Sg.Input(default_text='0', key='Moment', size=(5, 1)), Sg.Text('Moment')],
-                [Sg.Input(default_text='0', key='Shear', size=(5, 1)), Sg.Text('Shear')],
+                [Sg.Input(default_text='0', key='Mx', size=(5, 1)), Sg.Text('Moment about x')],
+                [Sg.Input(default_text='0', key='Mz', size=(5, 1)), Sg.Text('Moment about z')],
+                [Sg.Input(default_text='0', key='Vx', size=(5, 1)), Sg.Text('Vx')],
+                [Sg.Input(default_text='0', key='Vy', size=(5, 1)), Sg.Text('Vy')],
                 [Sg.Input(default_text='0', key='Axial', size=(5, 1)), Sg.Text('Axial (Tension Negative)')],
                 [Sg.Button('Calculate', key='Calculate'), Sg.Button('Back', key='back')],
                 [Sg.Text('', key='result')],
@@ -456,13 +458,13 @@ def bolts():
         elif event == Sg.WIN_CLOSED:
             break
         elif event == 'Calculate':
-            bolts = {}
-            bolts['Size'] = values['bolt_size']
-            bolts['Moment'] = values['Moment']
-            bolts['Shear'] = values['Shear']
-            bolts['Axial'] = values['Axial']
-            bolts['rows'] = values['#rows']
-            bolts['grade'] = values['grade']
+            bolts = values
+            for i in bolts:
+                try:
+                    bolts[i] = int(bolts[i])
+                except:
+                    pass
+
             for i in range(int(values['#rows'])):
                 bolts['x' + str(i + 1)] = values['x' + str(i)]
                 bolts['y' + str(i + 1)] = values['y' + str(i)]

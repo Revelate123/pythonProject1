@@ -1,23 +1,23 @@
-breadth,1000
-depth,100
+breadth,530
+depth,530
 cover,25
-fc,55
+fc,40
 Member Type,Beam
 Shape,Rectangle
 number of rows of reinforcement,1
-Ast1,1130
-y1,38
+Ast1,4000
+y1,400
 fy1,500
 0,False
-stirrups,0
+stirrups,10
 stirrup2,100
 stirrup3,300
 print demands,True
-Moment,0
+Moment,30
 Shear,0
 Axial,0
 print demand calculator,False
-Msls,0
+Msls,116
 job_name,Hello
 print_location,C:/Users/tduffett/Downloads
 Browse,
